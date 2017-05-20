@@ -1,0 +1,39 @@
+.\OBJ\w25qxx.o: ..\USER\W25QXX\w25qxx.c
+.\OBJ\w25qxx.o: ..\USER\SPI\spi.h
+.\OBJ\w25qxx.o: ..\Common\common.h
+.\OBJ\w25qxx.o: ..\Startup_config\stm32f4xx.h
+.\OBJ\w25qxx.o: ..\Startup_config\core_cm4.h
+.\OBJ\w25qxx.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\OBJ\w25qxx.o: E:\Program Files\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\OBJ\w25qxx.o: E:\Program Files\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\OBJ\w25qxx.o: ..\Startup_config\core_cm4_simd.h
+.\OBJ\w25qxx.o: ..\Startup_config\system_stm32f4xx.h
+.\OBJ\w25qxx.o: ..\Startup_config\stm32f4xx_conf.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_adc.h
+.\OBJ\w25qxx.o: ..\Startup_config\stm32f4xx.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_crc.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dbgmcu.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dma.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_exti.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_flash.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_gpio.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_i2c.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_iwdg.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_pwr.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_rcc.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_rtc.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_sdio.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_spi.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_syscfg.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_tim.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_usart.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_wwdg.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\misc.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_cryp.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_hash.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_rng.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_can.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dac.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h
+.\OBJ\w25qxx.o: ..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h
+.\OBJ\w25qxx.o: ..\USER\W25QXX\w25qxx.h
