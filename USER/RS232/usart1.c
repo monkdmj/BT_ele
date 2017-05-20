@@ -147,6 +147,7 @@ void USART1_IRQHandler(void)
 					//24c02存储记录条数 AT24C02_WriteByte  AT24C02_ReadByte
 					uart1_data_count = AT24C02_ReadByte(0);
 					uart1_data_count ++;
+					if(uart1_data_count >= 255) uart1_data_count = 0;
 					AT24C02_WriteByte(0, uart1_data_count);
 					uart1SendChar(uart1_data_count);
 					
