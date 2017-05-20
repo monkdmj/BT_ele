@@ -32,6 +32,8 @@ u8 package_data[USART1_REC_MASTER_NUM];
 u8 uart1_byte_count=0;
 u8 send_str1[UART1_TRS_NUM];
 
+u8 uart1_data_count=0;
+
 Sensor* result_slave;
 Sensor_master* result_master;
 
@@ -131,6 +133,8 @@ void USART1_IRQHandler(void)
 					// 	len = strlen((const char*)send_str);
 					// 	uart1SendChars(send_str,len);
 					// }
+					
+					//给slave返回OK
 					LED2 = !LED2;
 					char tmp[30] = "";
 					tmp[0]=0x4f;
@@ -140,6 +144,14 @@ void USART1_IRQHandler(void)
 				    len = strlen((const char*)tmp);
 				    uart1SendChars(tmp,len);
 					
+					//24c02存储记录条数 AT24C02_WriteByte  AT24C02_ReadByte
+					uart1_data_count = AT24C02_ReadByte(0);
+					uart1_data_count ++;
+					AT24C02_WriteByte(0, uart1_data_count);
+					uart1SendChar(uart1_data_count);
+					
+
+					//package
 					receive_str1[uart1_byte_count]=rec_data;
 				    uart1_byte_count++;
 
