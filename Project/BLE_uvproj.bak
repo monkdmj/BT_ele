@@ -350,7 +350,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Common;..\Main;..\Startup_config;..\STM32F4_FWLIB\inc;..\USER\BEEP;..\USER\KEY;..\USER\LED;..\USER\usart3_ble;..\USER\LCD;..\USER\DS18B20;..\USER\RTC;..\USER\MPU6050;..\USER\GSM;..\USER\ADC;..\USER\RS485;..\USER\INF;..\USER\RS232</IncludePath>
+              <IncludePath>..\Common;..\Main;..\Startup_config;..\STM32F4_FWLIB\inc;..\USER\BEEP;..\USER\KEY;..\USER\LED;..\USER\usart3_ble;..\USER\LCD;..\USER\DS18B20;..\USER\RTC;..\USER\MPU6050;..\USER\GSM;..\USER\ADC;..\USER\RS485;..\USER\INF;..\USER\RS232;..\USER\Sensor;..\USER\24C02;..\USER\W25QXX;..\USER\SPI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -485,6 +485,26 @@
               <FileName>usart1.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\RS232\usart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>24c02.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\24C02\24c02.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\SPI\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>w25qxx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\W25QXX\w25qxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>Sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\Sensor\Sensor.c</FilePath>
             </File>
           </Files>
         </Group>

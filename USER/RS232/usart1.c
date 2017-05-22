@@ -13,6 +13,7 @@
 #include "inf.h"
 #include "malloc.h"
 #include "24c02.h"  
+#include "w25qxx.h"
 //#include <stdio.h>
 
 /*********************************************************************************
@@ -33,6 +34,7 @@ u8 uart1_byte_count=0;
 u8 send_str1[UART1_TRS_NUM];
 
 u8 uart1_data_count=0;
+u8 full_flag = 0;
 
 Sensor* result_slave;
 Sensor_master* result_master;
@@ -146,8 +148,12 @@ void USART1_IRQHandler(void)
 					
 					//24c02存储记录条数 AT24C02_WriteByte  AT24C02_ReadByte
 					uart1_data_count = AT24C02_ReadByte(0);
+					if(uart1_data_count >= 255) 
+					{
+						uart1_data_count = 0;  //可以存255,下一次再判断
+						full_flag = 1;		   //表示之前存过255条
+					}
 					uart1_data_count ++;
-					if(uart1_data_count >= 255) uart1_data_count = 0;
 					AT24C02_WriteByte(0, uart1_data_count);
 					uart1SendChar(uart1_data_count);
 					
@@ -219,6 +225,12 @@ void USART1_IRQHandler(void)
 
 					//char* Óë char[],²»ÄÜÖ±½Ó¸³Öµ£¬³õÊ¼»¯³ýÍâ
 					strcpy(package_data, Sensor_master_to_String(result_master)); 
+
+
+					//W25Q128 存储2Bytes长度 + package; u8*<---->u16
+					u16 lenp = strlen((const char*)package_data);
+				    W25QXX_SectorWrite((u8*)lenp,(uart1_data_count-1)*4096,2);
+				    W25QXX_SectorWrite((u8*)package_data,(uart1_data_count-1)*4096+2,lenp);
 
 				    //test
 				    //Áªµ÷µÄÊ±ºò·¢OKodoa

@@ -47,3 +47,5 @@
 .\OBJ\usart3_ble.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdarg.h
 .\OBJ\usart3_ble.o: ..\USER\ADC\adc.h
 .\OBJ\usart3_ble.o: ..\USER\RS232\usart1.h
+.\OBJ\usart3_ble.o: ..\USER\W25QXX\w25qxx.h
+.\OBJ\usart3_ble.o: ..\USER\24C02\24c02.h

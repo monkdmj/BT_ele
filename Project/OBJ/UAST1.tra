@@ -45,7 +45,7 @@
 ### ADS-LD Output File: '.\OBJ\UAST1.axf'
 ### ADS-LD Command File: '.\OBJ\UAST1.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\OBJ\UAST1.lnp', Handle=0x00001C88
+### Creating CmdFile '.\OBJ\UAST1.lnp', Handle=0x00000A5C
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\OBJ\UAST1.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

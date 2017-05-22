@@ -13,6 +13,9 @@ extern u8 receive_str1[USART1_REC_NUM];
 extern u8 package_data[USART1_REC_MASTER_NUM];
 extern u8 send_str1[UART1_TRS_NUM];  
 
+extern u8 uart1_data_count;          //uart_byte_countÒªÐ¡ÓÚUSART_REC_LEN
+extern u8 full_flag;
+
 void uart1_init(u32 bound);
 void uart1SendChars(u8 *str, u16 strlen);
 

@@ -1,5 +1,5 @@
 Dependencies for Project 'BLE', Target 'Target 1': (DO NOT MODIFY !)
-F (..\Main\main.c)(0x592004C4)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\main.o" --omf_browse ".\OBJ\main.crf" --depend ".\OBJ\main.d")
+F (..\Main\main.c)(0x59205709)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\main.o" --omf_browse ".\OBJ\main.crf" --depend ".\OBJ\main.d")
 I (..\USER\usart3_ble\usart3_ble.h)(0x591FF62E)
 I (E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB0D286)
 I (..\Common\common.h)(0x5820943A)
@@ -51,7 +51,9 @@ I (..\USER\GSM\gsm.h)(0x58228179)
 I (..\USER\ADC\adc.h)(0x5597D1DB)
 I (..\USER\RS485\rs485.h)(0x58F435CA)
 I (..\USER\INF\inf.h)(0x58F433A2)
-I (..\USER\RS232\usart1.h)(0x591FD39E)
+I (..\USER\RS232\usart1.h)(0x59224E18)
+I (..\USER\24C02\24c02.h)(0x55619581)
+I (..\USER\W25QXX\w25qxx.h)(0x55671228)
 F (..\Main\stm32f4xx_it.c)(0x5426CDF4)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\stm32f4xx_it.o" --omf_browse ".\OBJ\stm32f4xx_it.crf" --depend ".\OBJ\stm32f4xx_it.d")
 I (..\Main\stm32f4xx_it.h)(0x5426CDC1)
 I (..\Startup_config\stm32f4xx.h)(0x550A89BE)
@@ -349,7 +351,7 @@ I (..\STM32F4_FWLIB\inc\stm32f4xx_can.h)(0x53DBAFAD)
 I (..\STM32F4_FWLIB\inc\stm32f4xx_dac.h)(0x53DBAFAD)
 I (..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h)(0x53DBAFAD)
 I (..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h)(0x53DBAFAD)
-F (..\USER\usart3_ble\usart3_ble.c)(0x591FF813)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\usart3_ble.o" --omf_browse ".\OBJ\usart3_ble.crf" --depend ".\OBJ\usart3_ble.d")
+F (..\USER\usart3_ble\usart3_ble.c)(0x59224EFE)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\usart3_ble.o" --omf_browse ".\OBJ\usart3_ble.crf" --depend ".\OBJ\usart3_ble.d")
 I (..\USER\usart3_ble\usart3_ble.h)(0x591FF62E)
 I (E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB0D286)
 I (..\Common\common.h)(0x5820943A)
@@ -396,7 +398,9 @@ I (..\USER\RTC\rtc.h)(0x556B0D23)
 I (..\USER\MPU6050\mpu6050.h)(0x58F42BD7)
 I (E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdarg.h)(0x4EB0D27C)
 I (..\USER\ADC\adc.h)(0x5597D1DB)
-I (..\USER\RS232\usart1.h)(0x591FD39E)
+I (..\USER\RS232\usart1.h)(0x59224E18)
+I (..\USER\W25QXX\w25qxx.h)(0x55671228)
+I (..\USER\24C02\24c02.h)(0x55619581)
 F (..\USER\MPU6050\mpu6050.c)(0x58F43013)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\mpu6050.o" --omf_browse ".\OBJ\mpu6050.crf" --depend ".\OBJ\mpu6050.d")
 I (..\USER\MPU6050\mpu6050.h)(0x58F42BD7)
 I (E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB0D286)
@@ -594,8 +598,8 @@ I (..\STM32F4_FWLIB\inc\stm32f4xx_can.h)(0x53DBAFAD)
 I (..\STM32F4_FWLIB\inc\stm32f4xx_dac.h)(0x53DBAFAD)
 I (..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h)(0x53DBAFAD)
 I (..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h)(0x53DBAFAD)
-F (..\USER\RS232\usart1.c)(0x59200464)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\usart1.o" --omf_browse ".\OBJ\usart1.crf" --depend ".\OBJ\usart1.d")
-I (..\USER\RS232\usart1.h)(0x591FD39E)
+F (..\USER\RS232\usart1.c)(0x59224E5C)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\usart1.o" --omf_browse ".\OBJ\usart1.crf" --depend ".\OBJ\usart1.d")
+I (..\USER\RS232\usart1.h)(0x59224E18)
 I (E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB0D286)
 I (..\Common\common.h)(0x5820943A)
 I (..\Startup_config\stm32f4xx.h)(0x550A89BE)
@@ -646,6 +650,8 @@ I (..\USER\ADC\adc.h)(0x5597D1DB)
 I (..\USER\RS485\rs485.h)(0x58F435CA)
 I (..\USER\INF\inf.h)(0x58F433A2)
 I (..\USER\Sensor\malloc.h)(0x591F8FB8)
+I (..\USER\24C02\24c02.h)(0x55619581)
+I (..\USER\W25QXX\w25qxx.h)(0x55671228)
 F (..\USER\24C02\24c02.c)(0x55619B89)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI --C99 -I "E:\Program Files\Keil\ARM\RV31\INC" -I "E:\Program Files\Keil\ARM\CMSIS\Include" -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx -o ".\OBJ\24c02.o" --omf_browse ".\OBJ\24c02.crf" --depend ".\OBJ\24c02.d")
 I (..\USER\24C02\24c02.h)(0x55619581)
 I (..\Common\common.h)(0x5820943A)

@@ -12,6 +12,7 @@
 #include "inf.h"
 #include "usart1.h"
 #include "24c02.h" 
+#include "w25qxx.h"
 // #include <stdio.h>
 
 /*********************************************************************************
@@ -81,6 +82,8 @@ int main(void)
 	RS485_Init(9600);		//初始化RS485串口2
 
 	AT24C02_Init();			//AT24C02初始化
+	W25QXX_Init();			//W25QXX初始化
+	//AT24C02_WriteByte(0,0); //此处不能初始化，相当于掉电丢失数据
 	/*
 	BRUSH_COLOR=RED;      //设置画笔颜色为红色
 	
