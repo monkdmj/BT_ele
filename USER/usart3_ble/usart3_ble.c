@@ -163,6 +163,12 @@ void USART3_IRQHandler(void)
 				uart1SendChars(package_data,len);
 				//uart3SendChars(package_data,len);
 			}
+			else if(strcmp("clear",(char *)receive_str)==0)
+			{
+				//............clear records
+				AT24C02_WriteByte(0, 0);
+				full_flag = 0;
+			}
 			else if('N'==receive_str[0])
 			{
 				//............test
@@ -205,9 +211,11 @@ void USART3_IRQHandler(void)
 				{
 					//rec_all:1-255;w25:0-244;
 					u8 tmp = (rec_all+255-i)%255;
-					u8* datatemp;
-					W25QXX_Read((u8*)pac_len,tmp*4096,2);
-					W25QXX_Read(datatemp,tmp*4096+2,pac_len);
+					u8 pac_tmp_len[2];
+					u8 datatemp[USART1_REC_MASTER_NUM];
+					W25QXX_Read((u8*)pac_tmp_len,tmp*4096,2);
+					pac_len = (pac_tmp_len[0] << 8) + pac_tmp_len[1];
+					W25QXX_Read((u8*)datatemp,tmp*4096+2,pac_len);
 					uart3SendChars(datatemp,pac_len);
 				}
 
