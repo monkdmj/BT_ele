@@ -68,6 +68,38 @@ void HC_SR04_tInit(void)
 	GPIO_Init(GPIOB, &GPIO_InitStructure);	
 	GPIO_SetBits(GPIOB, GPIO_Pin_12 |GPIO_Pin_13);
 	
+	
+	
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);  
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;		//PB12--ECHO
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 		//¸¡¿ÕÊäÈë
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;			//PB13--TRIG	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;					//Ä£ÄâÊä³ö
+	//GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;       //推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 
+	GPIO_Init(GPIOC, &GPIO_InitStructure);	
+	GPIO_SetBits(GPIOC, GPIO_Pin_0 |GPIO_Pin_1);
+	
+	
+	
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);  
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;		//PB12--ECHO
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 		//¸¡¿ÕÊäÈë
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 
+	GPIO_Init(GPIOC, &GPIO_InitStructure);
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;			//PB13--TRIG	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;					//Ä£ÄâÊä³ö
+	//GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;       //推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 
+	GPIO_Init(GPIOC, &GPIO_InitStructure);	
+	GPIO_SetBits(GPIOC, GPIO_Pin_2 |GPIO_Pin_3);
+	
 	TIM2_Init(4999,8399);	//定时器2时钟84M，分频系数8400，84M/8400=10K 所以计数5000次为500ms 
 }
  
@@ -79,12 +111,42 @@ void SR04_Trg(void)
 	Trgger=0;
 }
 
+void SR04_Trg1(void)										
+{
+	Trgger1=1;
+	delay_us(15);
+	Trgger1=0;
+}
+
+void SR04_Trg2(void)										
+{
+	Trgger2=1;
+	delay_us(15);
+	Trgger2=0;
+}
+
 /*»ñÈ¡Ê±¼ä²¢¼ÆËã¾àÀë*/
 void SR04_Cnt(void)
 {
 	u16 tim = 0;
 	tim = TIM_GetCounter(TIM2);
 	dis[0]=tim*1.7f;  //tim/10000.0f*340/2*100 cm
+	TIM2->CNT=0;											
+}
+
+void SR04_Cnt1(void)
+{
+	u16 tim = 0;
+	tim = TIM_GetCounter(TIM2);
+	dis[1]=tim*1.7f;  //tim/10000.0f*340/2*100 cm
+	TIM2->CNT=0;											
+}
+
+void SR04_Cnt2(void)
+{
+	u16 tim = 0;
+	tim = TIM_GetCounter(TIM2);
+	dis[2]=tim*1.7f;  //tim/10000.0f*340/2*100 cm
 	TIM2->CNT=0;											
 }
 
@@ -97,6 +159,28 @@ void hcrs04_running(void)
 	while(ECHO == 1);  // while((ReadEcho()==1)&&(TIM2->CNT<TIM2->ARR-10));
 	TIM_Cmd(TIM2, DISABLE);
 	SR04_Cnt();	
+}
+
+void hcrs04_running1(void)
+{
+	SR04_Trg1();
+	TIM2->CNT=0;
+	while(ECHO1 == 0);
+	TIM_Cmd(TIM2, ENABLE);
+	while(ECHO1 == 1);  // while((ReadEcho()==1)&&(TIM2->CNT<TIM2->ARR-10));
+	TIM_Cmd(TIM2, DISABLE);
+	SR04_Cnt1();	
+}
+
+void hcrs04_running2(void)
+{
+	SR04_Trg2();
+	TIM2->CNT=0;
+	while(ECHO2 == 0);
+	TIM_Cmd(TIM2, ENABLE);
+	while(ECHO2 == 1);  // while((ReadEcho()==1)&&(TIM2->CNT<TIM2->ARR-10));
+	TIM_Cmd(TIM2, DISABLE);
+	SR04_Cnt2();	
 }
 
 //定时器3中断服务函数

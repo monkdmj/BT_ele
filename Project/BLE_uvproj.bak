@@ -347,7 +347,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>--C99</MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
               <IncludePath>..\Common;..\Main;..\Startup_config;..\STM32F4_FWLIB\inc;..\USER\BEEP;..\USER\KEY;..\USER\LED;..\USER\usart3_ble;..\USER\LCD;..\USER\DS18B20;..\USER\RTC;..\USER\MPU6050;..\USER\GSM;..\USER\ADC;..\USER\RS485;..\USER\INF;..\USER\RS232;..\USER\Sensor;..\USER\24C02;..\USER\W25QXX;..\USER\SPI</IncludePath>
@@ -506,6 +506,21 @@
               <FileType>1</FileType>
               <FilePath>..\USER\Sensor\Sensor.c</FilePath>
             </File>
+            <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\Sensor\cJSON.c</FilePath>
+            </File>
+            <File>
+              <FileName>malloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\Sensor\malloc.c</FilePath>
+            </File>
+            <File>
+              <FileName>s2j.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\Sensor\s2j.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -555,6 +570,11 @@
               <FileName>stm32f4xx_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F4_FWLIB\src\stm32f4xx_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F4_FWLIB\src\stm32f4xx_spi.c</FilePath>
             </File>
           </Files>
         </Group>
