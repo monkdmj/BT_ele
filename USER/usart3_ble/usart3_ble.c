@@ -154,6 +154,13 @@ void USART3_IRQHandler(void)
 			{
 				uart3SendChars("correct_OKcorrect_OKcorrect_OK",30);
 			}
+			else if(strcmp("dis",(char *)receive_str)==0)
+			{
+				hcrs04_running();
+				sprintf(send_str, "%.3f%s",dis[0],"cm");
+				len = strlen((const char*)send_str);
+				uart3SendChars(send_str,len);
+			}
 			else if(strcmp("Data",(char *)receive_str)==0)
 			{
 				//............test
@@ -216,6 +223,7 @@ void USART3_IRQHandler(void)
 					W25QXX_Read((u8*)pac_tmp_len,tmp*4096,2);
 					pac_len = (pac_tmp_len[0] << 8) + pac_tmp_len[1];
 					W25QXX_Read((u8*)datatemp,tmp*4096+2,pac_len);
+					uart1SendChars(datatemp,pac_len);
 					uart3SendChars(datatemp,pac_len);
 				}
 

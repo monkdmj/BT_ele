@@ -13,6 +13,7 @@
 #include "usart1.h"
 #include "24c02.h" 
 #include "w25qxx.h"
+#include "timer.h"
 // #include <stdio.h>
 
 /*********************************************************************************
@@ -31,7 +32,7 @@
 
 u8 const *weekdate[7]={"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 float voice = 0.0f;
-float dis[4] = {0.0f, 0.0f, 0.0f, 0.0f};
+//float dis[4] = {0.0f, 0.0f, 0.0f, 0.0f};
 
 
 
@@ -83,6 +84,7 @@ int main(void)
 
 	AT24C02_Init();			//AT24C02初始化
 	W25QXX_Init();			//W25QXX初始化
+	HC_SR04_tInit();
 	//AT24C02_WriteByte(0,0); //此处不能初始化，相当于掉电丢失数据
 	/*
 	BRUSH_COLOR=RED;      //设置画笔颜色为红色
@@ -151,7 +153,7 @@ int main(void)
 					//USART_SendData(UART4,0x1a);//SUCCES
 					
 					voice = (float)Get_Adc(ADC_Channel_4) / 4096.0f * 430.0 / 5.0;
-					dis[0] = (float)Get_Adc2_Average(ADC_Channel_5,5);
+					//dis[0] = (float)Get_Adc2_Average(ADC_Channel_5,10) / 4096.0f * 3.3f;
 					
 					//串口1打印测试
 					//暂时关闭
@@ -159,9 +161,9 @@ int main(void)
 					// len = strlen((const char*)send_rs232);
 					// uart1SendChars(send_rs232,len);
 					
-					// sprintf(send_rs232, "%.3f%s",dis[0],"cm");
-					// len = strlen((const char*)send_rs232);
-					// uart1SendChars(send_rs232,len);
+					//sprintf(send_rs232, "%.3f%s",dis[0],"cm");
+					//len = strlen((const char*)send_rs232);
+					//uart1SendChars(send_rs232,len);
 		
 					//char*就是乱码
 					// char *temp;

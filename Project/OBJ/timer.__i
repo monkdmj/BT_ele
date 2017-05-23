@@ -2,4 +2,4 @@
 -I "E:\Program Files\Keil\ARM\RV31\INC" 
 -I "E:\Program Files\Keil\ARM\CMSIS\Include" 
 -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx 
--o ".\OBJ\usart1.o" --omf_browse ".\OBJ\usart1.crf" --depend ".\OBJ\usart1.d" "..\USER\RS232\usart1.c"
+-o ".\OBJ\timer.o" --omf_browse ".\OBJ\timer.crf" --depend ".\OBJ\timer.d" "..\USER\HCSR04\timer.c"

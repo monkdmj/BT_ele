@@ -37,6 +37,7 @@
 .\OBJ\usart3_ble.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dac.h
 .\OBJ\usart3_ble.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h
 .\OBJ\usart3_ble.o: ..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h
+.\OBJ\usart3_ble.o: ..\USER\HCSR04\timer.h
 .\OBJ\usart3_ble.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\string.h
 .\OBJ\usart3_ble.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\OBJ\usart3_ble.o: ..\USER\LED\led.h

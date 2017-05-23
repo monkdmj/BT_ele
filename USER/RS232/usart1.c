@@ -224,18 +224,18 @@ void USART1_IRQHandler(void)
 				    //uart1SendChars(result_master->date,len);
 
 					//char* Óë char[],²»ÄÜÖ±½Ó¸³Öµ£¬³õÊ¼»¯³ýÍâ
-					//strcpy(package_data, Sensor_master_to_String(result_master)); 
+					// strcpy(package_data, Sensor_master_to_String(result_master)); 
 
 
 					//test W25Q128 非测试情况下，必须注释
 					strcpy(package_data, receive_str1);
-					uart1SendChar(0x0d);
-					uart1SendChar(0x0a);
-					uart1SendChars(package_data,uart1_byte_count);
-					W25QXX_SectorWrite((u8*)package_data,(uart1_data_count-1)*4096+16,uart1_byte_count);
-					u8 datatemp1[USART1_REC_MASTER_NUM];  //u8*datatemp1 -- datatemp1 就不对
-					W25QXX_Read((u8*)datatemp1,(uart1_data_count-1)*4096+16,uart1_byte_count);
-					uart1SendChars(datatemp1,uart1_byte_count);
+					// uart1SendChar(0x0d);
+					// uart1SendChar(0x0a);
+					// uart1SendChars(package_data,uart1_byte_count);
+					// W25QXX_SectorWrite((u8*)package_data,(uart1_data_count-1)*4096+16,uart1_byte_count);
+					// u8 datatemp1[USART1_REC_MASTER_NUM];  //u8*datatemp1 -- datatemp1 就不对
+					// W25QXX_Read((u8*)datatemp1,(uart1_data_count-1)*4096+16,uart1_byte_count);
+					// uart1SendChars(datatemp1,uart1_byte_count);
 					
 					//W25Q128 存储2Bytes长度 + package; u8*<---->u16
 					u16 lenp = strlen((const char*)package_data);
@@ -244,25 +244,25 @@ void USART1_IRQHandler(void)
 					lenp_8[0] = lenp >> 8;
 					lenp_8[1] = lenp - (lenp_8[0] << 8);
 					//test u8*<---->u16
-					uart1SendChar(lenp_8[0]);
-					uart1SendChar(lenp_8[1]);
+					//uart1SendChar(lenp_8[0]);
+					//uart1SendChar(lenp_8[1]);
 				    W25QXX_SectorWrite((u8*)lenp_8,(uart1_data_count-1)*4096,2);
 				    W25QXX_SectorWrite((u8*)package_data,(uart1_data_count-1)*4096+2,lenp);
 				    //W25QXX_SectorWrite((u8*)package_data,(uart1_data_count-1)*4096+2,uart1_byte_count);
 
 				    //test W25Q128 非测试情况下，必须注释
-					u16 pac_len;
-					u8 pac_tmp_len[2];
-					u8 datatemp[USART1_REC_MASTER_NUM];
-					W25QXX_Read((u8*)pac_tmp_len,(uart1_data_count-1)*4096,2);
-					uart1SendChar(pac_tmp_len[0]);
-					uart1SendChar(pac_tmp_len[1]);
-					pac_len = (pac_tmp_len[0] << 8) + pac_tmp_len[1];
-					//pac_len = (pac_tmp_len[0]) << 8 + pac_tmp_len[1];  //错误的关键原因
-					W25QXX_Read((u8*)datatemp,(uart1_data_count-1)*4096+2,pac_len);
-					//W25QXX_Read(datatemp,(uart1_data_count-1)*4096+2,uart1_byte_count);
-					uart1SendChars(datatemp,pac_len);
-					//uart1SendChars(datatemp,uart1_byte_count);
+					// u16 pac_len;
+					// u8 pac_tmp_len[2];
+					// u8 datatemp[USART1_REC_MASTER_NUM];
+					// W25QXX_Read((u8*)pac_tmp_len,(uart1_data_count-1)*4096,2);
+					//uart1SendChar(pac_tmp_len[0]);
+					//uart1SendChar(pac_tmp_len[1]);
+					// pac_len = (pac_tmp_len[0] << 8) + pac_tmp_len[1];
+					// W25QXX_Read((u8*)datatemp,(uart1_data_count-1)*4096+2,pac_len);
+					// uart1SendChars(datatemp,pac_len);
+					////pac_len = (pac_tmp_len[0]) << 8 + pac_tmp_len[1];  //错误的关键原因
+					////W25QXX_Read(datatemp,(uart1_data_count-1)*4096+2,uart1_byte_count);
+					////uart1SendChars(datatemp,uart1_byte_count);
 
 				    //test
 				    //Áªµ÷µÄÊ±ºò·¢OKodoa

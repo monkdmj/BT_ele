@@ -37,6 +37,7 @@
 .\OBJ\main.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dac.h
 .\OBJ\main.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h
 .\OBJ\main.o: ..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h
+.\OBJ\main.o: ..\USER\HCSR04\timer.h
 .\OBJ\main.o: ..\USER\LED\led.h
 .\OBJ\main.o: ..\USER\BEEP\beep.h
 .\OBJ\main.o: ..\USER\LCD\lcd.h
