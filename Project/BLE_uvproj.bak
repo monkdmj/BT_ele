@@ -350,7 +350,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Common;..\Main;..\Startup_config;..\STM32F4_FWLIB\inc;..\USER\BEEP;..\USER\KEY;..\USER\LED;..\USER\usart3_ble;..\USER\LCD;..\USER\DS18B20;..\USER\RTC;..\USER\MPU6050;..\USER\GSM;..\USER\ADC;..\USER\RS485;..\USER\INF;..\USER\RS232;..\USER\Sensor;..\USER\24C02;..\USER\W25QXX;..\USER\SPI</IncludePath>
+              <IncludePath>..\Common;..\Main;..\Startup_config;..\STM32F4_FWLIB\inc;..\USER\BEEP;..\USER\KEY;..\USER\LED;..\USER\usart3_ble;..\USER\LCD;..\USER\DS18B20;..\USER\RTC;..\USER\MPU6050;..\USER\GSM;..\USER\ADC;..\USER\RS485;..\USER\INF;..\USER\RS232;..\USER\Sensor;..\USER\24C02;..\USER\W25QXX;..\USER\SPI;..\USER\HCSR04</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -521,6 +521,11 @@
               <FileType>1</FileType>
               <FilePath>..\USER\Sensor\s2j.c</FilePath>
             </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\HCSR04\timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -575,6 +580,11 @@
               <FileName>stm32f4xx_spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F4_FWLIB\src\stm32f4xx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\STM32F4_FWLIB\src\stm32f4xx_tim.c</FilePath>
             </File>
           </Files>
         </Group>

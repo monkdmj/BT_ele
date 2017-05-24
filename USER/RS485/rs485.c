@@ -3,6 +3,7 @@
 #include "stdlib.h"  
 #include "led.h" 
 #include "beep.h"
+#include "usart1.h"
 	 
 /*********************************************************************************
 **********************MCUÆôÃ÷ STM32F407Ó¦ÓÃ¿ª·¢°å(¸ßÅä°æ)*************************
@@ -20,8 +21,19 @@
   	  
 //½ÓÊÕ»º´æÇø 	
 u8 RS485_receive_str[128];   //½ÓÊÕ»º³å,×î´ó128¸ö×Ö½Ú.
-u8 uart2_byte_count=0;        //½ÓÊÕµ½µÄÊý¾Ý³¤¶È
 
+u8 RS485_receive_status[128];   //½ÓÊÕ»º³å,×î´ó128¸ö×Ö½Ú.
+u8 status_len = 0;
+u8 RS485_receive_alarm[128];   //½ÓÊÕ»º³å,×î´ó128¸ö×Ö½Ú.
+u8 alarm_len = 0;
+
+u8 RS485_byte_count=0;        //½ÓÊÕµ½µÄÊý¾Ý³¤¶È
+
+u8 RS485_status_success=0;
+u8 RS485_alarm_success=0;
+//u8 first_pac = 0; 
+
+//u8 test_first_sec = 0;
 										 
 //³õÊ¼»¯IO ´®¿Ú2   bound:²¨ÌØÂÊ	
 void RS485_Init(u32 bound)
@@ -83,28 +95,91 @@ void USART2_IRQHandler(void)
 {
 	u8 rec_data;	    
 	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)//½ÓÊÕµ½Êý¾Ý
-	{	 	
-				rec_data =(u8)USART_ReceiveData(USART2);         //(USART2->DR) ¶ÁÈ¡½ÓÊÕµ½µÄÊý¾Ý
-        if(rec_data=='S')		  	                         //Èç¹ûÊÇS£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢µÄÆðÊ¼Î»
-				{
-					uart2_byte_count=0x01; 
-				}
+	{
+		//LED2=0;	 	
+		rec_data =(u8)USART_ReceiveData(USART2);         //(USART2->DR) ¶ÁÈ¡½ÓÊÕµ½µÄÊý¾Ý
+		if(rec_data==0xEF)		  	                         //Èç¹ûÊÇS£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢µÄÆðÊ¼Î»
+		{
+			RS485_receive_str[RS485_byte_count]=rec_data;
+			RS485_byte_count=0x01;  //¾ø´óºÃ´¦£ºÓöµ½EF¾ÍÖÃÒ»
+			// first_pac = 1;
 
-			else if(rec_data=='E')		                         //Èç¹ûE£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢´«ËÍµÄ½áÊøÎ»
-				{
-					if(strcmp("Light_led1",(char *)RS485_receive_str)==0)        LED1=0;	//µãÁÁLED1
-					else if(strcmp("Close_led1",(char *)RS485_receive_str)==0)   LED1=1;	//¹ØÃðLED1
-					else if(strcmp("Open_beep",(char *)RS485_receive_str)==0)    BEEP=1; 	//·äÃùÆ÷Ïì
-					else if(strcmp("Close_beep",(char *)RS485_receive_str)==0)   BEEP=0; 	//·äÃùÆ÷²»Ïì
-					
-					for(uart2_byte_count=0;uart2_byte_count<32;uart2_byte_count++) RS485_receive_str[uart2_byte_count]=0x00;
-					uart2_byte_count=0;    
-				}				  
-			else if((uart2_byte_count>0)&&(uart2_byte_count<=128))
-				{
-				   RS485_receive_str[uart2_byte_count-1]=rec_data;
-				   uart2_byte_count++;
-				}
+			//if(test_first_sec) uart1SendChars("test1",5);
+		}
+		// else if(rec_data==0xAE && first_pac == 1)		  	                         //Èç¹ûÊÇS£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢µÄÆðÊ¼Î»
+		// {
+		// 	RS485_receive_str[RS485_byte_count]=rec_data;
+		// 	RS485_byte_count++; 
+		// 	first_pac = 0;
+		// }
+		// else if(rec_data==0xEC)		  	                         //Èç¹ûÊÇS£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢µÄÆðÊ¼Î»
+		// {
+		// 	RS485_receive_str[RS485_byte_count]=rec_data;
+		// 	RS485_byte_count++; 
+		// 	first_pac = 1;
+		// }
+		else if(rec_data==0xAD /*&& first_pac == 1*/)		  	                         //Èç¹ûÊÇS£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢µÄÆðÊ¼Î»
+		{
+			RS485_receive_str[RS485_byte_count]=rec_data;
+			RS485_byte_count++; 
+			//first_pac = 0;
+			//LED1=0;
+			//if(test_first_sec == 0)
+			if(RS485_receive_str[4] == 0x02)
+			{
+				//test
+				// LED2=0;
+				// uart1SendChars("test",4);
+
+				//RS485_Receive_Data(RS485_receive_status,&status_len);  //Ê¹ÓÃÁËRS485_byte_count
+				//uart1SendChars(RS485_receive_status,status_len);  //处理的时间超过了发送的间隔，导致第二个包首没收到
+				memcpy(RS485_receive_status,RS485_receive_str,RS485_byte_count); //RS485_Receive_Data函数有问题
+				status_len = RS485_byte_count;
+				RS485_status_success = 1;
+				//test
+				//test_first_sec = 1;
+				// uart1SendChars("test",4);
+			}
+			//else
+			else if(RS485_receive_str[4] == 0x03)
+			{
+				//test
+				//LED1=0;
+				//uart1SendChars("test2",5);
+				//uart1SendChar(RS485_byte_count);
+				//uart1SendChar(RS485_receive_str[RS485_byte_count]);
+				//u8 len = strlen((const char*)RS485_receive_str);
+				//uart3SendChars(RS485_receive_str,len);
+				//RS485_Receive_Data(RS485_receive_alarm,&alarm_len);
+				memcpy(RS485_receive_alarm,RS485_receive_str,RS485_byte_count);
+				alarm_len = RS485_byte_count;
+				//uart3SendChars(RS485_receive_alarm,alarm_len);
+				RS485_alarm_success = 1;
+				//test
+				// test_first_sec = 0;
+			}
+
+			//for(RS485_byte_count=0;RS485_byte_count<128;RS485_byte_count++) RS485_receive_str[RS485_byte_count]=0x00;
+			memset(RS485_receive_str,0,128);
+			RS485_byte_count=0;  
+		}
+		// else if(rec_data=='E')		                         //Èç¹ûE£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢´«ËÍµÄ½áÊøÎ»
+		// {
+		// 	if(strcmp("Light_led1",(char *)RS485_receive_str)==0)        LED1=0;	//µãÁÁLED1
+		// 	else if(strcmp("Close_led1",(char *)RS485_receive_str)==0)   LED1=1;	//¹ØÃðLED1
+		// 	else if(strcmp("Open_beep",(char *)RS485_receive_str)==0)    BEEP=1; 	//·äÃùÆ÷Ïì
+		// 	else if(strcmp("Close_beep",(char *)RS485_receive_str)==0)   BEEP=0; 	//·äÃùÆ÷²»Ïì
+			
+			  
+		// }				  
+		else if(/*(first_pac != 1) && */((RS485_byte_count>=1)&&(RS485_byte_count<=128)))
+		{
+		   RS485_receive_str[RS485_byte_count]=rec_data;
+		   RS485_byte_count++;
+
+		   //if(test_first_sec) uart1SendChar(RS485_byte_count);
+		   //if(test_first_sec) uart1SendChar(RS485_receive_str[RS485_byte_count]);
+		}
 	}  											 
 } 
 
@@ -127,7 +202,7 @@ void RS485_Send_Data(u8 *buf,u8 len)
     USART_SendData(USART2,buf[t]); //·¢ËÍÊý¾Ý
 	}	 
 	while(USART_GetFlagStatus(USART2,USART_FLAG_TC)==RESET);   //µÈ´ý·¢ËÍ½áÊø		
-	uart2_byte_count=0;	  
+	RS485_byte_count=0;	  
 	RS485_TX_EN=0;				//·¢ËÍÍêÉèÖÃÎª½ÓÊÕÄ£Ê½	
 }
 
@@ -139,21 +214,23 @@ void RS485_Send_Data(u8 *buf,u8 len)
 * ·µ»Ø²ÎÊý£ºÎÞ
 * Ëµ    Ã÷£º      
 ****************************************************************************/
+
+//ÔÚ´Ë²É¼¯Æ÷ÖÐ£¬Ö»ÄÜ±»¶¯ÊÕ£¬ÃüÁî¿ØÖÆÔÝÊ±²»ÐÐ£»¶øÇÒreceiveÖ»ÄÜÓësendÅäÌ×Ê¹ÓÃ
 void RS485_Receive_Data(u8 *buf,u8 *len)
 {
-	u8 rxlen=uart2_byte_count;
+	u8 rxlen=RS485_byte_count;
 	u8 i=0;
 	*len=0;				   //Ä¬ÈÏÎª0
 	delay_ms(10);		 //µÈ´ý10ms,Á¬Ðø³¬¹ý10msÃ»ÓÐ½ÓÊÕµ½Ò»¸öÊý¾Ý,ÔòÈÏÎª½ÓÊÕ½áÊø
 	
-	if(rxlen==uart2_byte_count&&rxlen) //½ÓÊÕµ½ÁËÊý¾Ý,ÇÒ½ÓÊÕÍê³ÉÁË
+	if(rxlen==RS485_byte_count&&rxlen) //½ÓÊÕµ½ÁËÊý¾Ý,ÇÒ½ÓÊÕÍê³ÉÁË
 	{
 		for(i=0;i<rxlen;i++)
 		{
 			buf[i]=RS485_receive_str[i];	
 		}		
-		*len=uart2_byte_count;	//¼ÇÂ¼±¾´ÎÊý¾Ý³¤¶È
-		uart2_byte_count=0;		  //ÇåÁã
+		*len=RS485_byte_count;	//¼ÇÂ¼±¾´ÎÊý¾Ý³¤¶È
+		RS485_byte_count=0;		  //ÇåÁã
 	}
 }
 

@@ -14,6 +14,7 @@
 #include "malloc.h"
 #include "24c02.h"  
 #include "w25qxx.h"
+#include "timer.h"
 //#include <stdio.h>
 
 /*********************************************************************************
@@ -155,7 +156,7 @@ void USART1_IRQHandler(void)
 					}
 					uart1_data_count ++;
 					AT24C02_WriteByte(0, uart1_data_count);
-					uart1SendChar(uart1_data_count);
+					//uart1SendChar(uart1_data_count);
 					
 
 					//package
@@ -224,11 +225,11 @@ void USART1_IRQHandler(void)
 				    //uart1SendChars(result_master->date,len);
 
 					//char* Óë char[],²»ÄÜÖ±½Ó¸³Öµ£¬³õÊ¼»¯³ýÍâ
-					// strcpy(package_data, Sensor_master_to_String(result_master)); 
+					strcpy(package_data, Sensor_master_to_String(result_master)); 
 
 
 					//test W25Q128 非测试情况下，必须注释
-					strcpy(package_data, receive_str1);
+					// strcpy(package_data, receive_str1);
 					// uart1SendChar(0x0d);
 					// uart1SendChar(0x0a);
 					// uart1SendChars(package_data,uart1_byte_count);

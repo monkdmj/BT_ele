@@ -35,7 +35,7 @@ typedef struct {
 	float acc[3];		//加速度
 	float pal[3];		//角速度
 	float angle[3];		//角度
-	float dis[4];		//以主控为中心，距电梯四壁距离
+	float dis[3];		//以主控为中心，距电梯四壁距离
 
 	char* date;           //采集的时间
 

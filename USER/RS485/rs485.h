@@ -4,7 +4,13 @@
 
 	  	
 extern u8 RS485_receive_str[128]; 	//接收缓冲,最大128个字节
-extern u8 uart2_byte_count;   			  //接收到的数据长度
+extern u8 RS485_receive_status[128];   //接收缓冲,最大128个字节.
+extern u8 status_len;
+extern u8 RS485_receive_alarm[128];   //接收缓冲,最大128个字节.
+extern u8 alarm_len;
+extern u8 RS485_byte_count;   			  //接收到的数据长度
+extern u8 RS485_status_success;   			  //是否接收到数据
+extern u8 RS485_alarm_success;   			  //是否接收到数据
 
 //模式控制
 #define RS485_TX_EN		PGout(6)	    //485模式控制.0,接收;1,发送.

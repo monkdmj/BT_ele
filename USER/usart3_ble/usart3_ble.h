@@ -2,12 +2,11 @@
 #define __USART3_H
 #include "stdio.h"	
 #include "common.h" 
-#include "timer.h"
 
 //////////////////////////////////////////////////////////////////////////////////	 
 #define LTE_connect 	PGin(1)     //LTE连接标志  为1 与手机APP或者其他设备连接成功
 
-extern u8 APP_mode;
+//extern u8 APP_mode;
 
 #define UART3_REC_NUM  			300  	//定义最大接收字节数 200
 #define UART3_TRS_NUM           300     // TX MAX 1024

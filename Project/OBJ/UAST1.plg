@@ -4,6 +4,1845 @@
 <h1>礦ision Build Log</h1>
 <h2>Project:</h2>
 F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\BLE.uvproj
-Project File Date:  05/21/2017
+Project File Date:  05/23/2017
 
 <h2>Output:</h2>
+Build target 'Target 1'
+compiling usart1.c...
+..\USER\RS232\usart1.c(148): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+..\USER\RS232\usart1.c(168): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+..\USER\RS232\usart1.c(228): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+linking...
+Program Size: Code=58854 RO-data=7350 RW-data=204 ZI-data=1228740  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 3 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=58854 RO-data=7350 RW-data=204 ZI-data=1228740  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.267V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(163): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(250): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(253): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(256): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(268): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(271): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(274): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(286): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(289): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(292): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(303): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(313): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(314): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+linking...
+Program Size: Code=58862 RO-data=7350 RW-data=204 ZI-data=1228740  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 13 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+linking...
+Program Size: Code=58862 RO-data=7350 RW-data=204 ZI-data=1228740  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\Main\main.c(155): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Main\main.c(56): warning:  #177-D: variable "temperature" was declared but never referenced
+..\Main\main.c(57): warning:  #177-D: variable "tempbuf" was declared but never referenced
+..\Main\main.c(58): warning:  #177-D: variable "send_rs232" was declared but never referenced
+..\Main\main.c(59): warning:  #177-D: variable "len" was declared but never referenced
+compiling stm32f4xx_it.c...
+compiling system_stm32f4xx.c...
+compiling key.c...
+compiling led.c...
+compiling lcd.c...
+compiling beep.c...
+compiling rtc.c...
+..\USER\RTC\rtc.c(77): warning:  #188-D: enumerated type mixed with another type
+compiling DS18B20.c...
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(164): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(251): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(254): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(257): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(269): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(272): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(275): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(287): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(290): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(293): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(304): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(314): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(315): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+compiling mpu6050.c...
+compiling gsm.c...
+..\USER\GSM\gsm.c(142): warning:  #870-D: invalid multibyte character sequence
+..\USER\GSM\gsm.c(143): warning:  #870-D: invalid multibyte character sequence
+..\USER\GSM\gsm.c(144): warning:  #870-D: invalid multibyte character sequence
+..\USER\GSM\gsm.c(158): warning:  #870-D: invalid multibyte character sequence
+..\USER\GSM\gsm.c(159): warning:  #870-D: invalid multibyte character sequence
+..\USER\GSM\gsm.c(160): warning:  #870-D: invalid multibyte character sequence
+compiling adc.c...
+compiling rs485.c...
+compiling inf.c...
+compiling usart1.c...
+..\USER\RS232\usart1.c(148): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+..\USER\RS232\usart1.c(168): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+..\USER\RS232\usart1.c(228): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+compiling 24c02.c...
+compiling spi.c...
+compiling w25qxx.c...
+compiling Sensor.c...
+compiling cJSON.c...
+..\USER\Sensor\cJSON.c(56): warning:  #1293-D: assignment in condition
+..\USER\Sensor\cJSON.c(282): warning:  #1293-D: assignment in condition
+..\USER\Sensor\cJSON.c(356): warning:  #111-D: statement is unreachable
+..\USER\Sensor\cJSON.c(427): warning:  #1293-D: assignment in condition
+..\USER\Sensor\cJSON.c(539): warning:  #1293-D: assignment in condition
+compiling malloc.c...
+compiling s2j.c...
+compiling timer.c...
+compiling misc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_fsmc.c...
+compiling stm32f4xx_rtc.c...
+compiling stm32f4xx_pwr.c...
+compiling stm32f4xx_exti.c...
+compiling stm32f4xx_adc.c...
+compiling stm32f4xx_spi.c...
+compiling stm32f4xx_tim.c...
+compiling common.c...
+linking...
+Program Size: Code=58910 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 33 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+..\Main\main.c(156): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Main\main.c(56): warning:  #177-D: variable "temperature" was declared but never referenced
+..\Main\main.c(57): warning:  #177-D: variable "tempbuf" was declared but never referenced
+..\Main\main.c(58): warning:  #177-D: variable "send_rs232" was declared but never referenced
+..\Main\main.c(59): warning:  #177-D: variable "len" was declared but never referenced
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(187): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(274): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(277): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(280): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(292): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(295): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(298): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(310): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(313): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(316): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(327): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(337): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(338): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+linking...
+Program Size: Code=59070 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 18 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling main.c...
+..\Main\main.c(157): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Main\main.c(57): warning:  #177-D: variable "temperature" was declared but never referenced
+..\Main\main.c(58): warning:  #177-D: variable "tempbuf" was declared but never referenced
+..\Main\main.c(59): warning:  #177-D: variable "send_rs232" was declared but never referenced
+..\Main\main.c(60): warning:  #177-D: variable "len" was declared but never referenced
+linking...
+Program Size: Code=59070 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 5 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.267V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59086 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(127): error:  #127: expected a statement
+..\USER\RS485\rs485.c(134): warning:  #12-D: parsing restarts here after previous syntax error
+Target not created
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59038 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(135): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59102 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(139): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59110 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(139): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59110 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(133): error:  #167: argument of type "int" is incompatible with parameter of type "u8 *"
+..\USER\RS485\rs485.c(140): warning:  #223-D: function "uart3SendChars" declared implicitly
+Target not created
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(140): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59126 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59142 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59150 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59158 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59102 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59126 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59110 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(149): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59134 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(149): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59134 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=59134 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59142 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(148): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59150 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: Code=59150 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart1SendChar" declared implicitly
+..\USER\RS485\rs485.c(151): warning:  #223-D: function "uart3SendChars" declared implicitly
+..\USER\RS485\rs485.c(174): warning:  #223-D: function "uart1SendChar" declared implicitly
+linking...
+Program Size: Code=59158 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 3 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(147): warning:  #223-D: function "uart1SendChar" declared implicitly
+..\USER\RS485\rs485.c(152): warning:  #223-D: function "uart3SendChars" declared implicitly
+..\USER\RS485\rs485.c(176): warning:  #223-D: function "uart1SendChar" declared implicitly
+linking...
+Program Size: Code=59174 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 3 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+..\USER\RS485\rs485.c(152): warning:  #223-D: function "uart3SendChars" declared implicitly
+linking...
+Program Size: Code=59006 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 1 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=58966 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(189): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(276): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(279): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(282): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(294): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(297): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(300): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(312): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(315): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(318): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(329): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(339): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(340): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+linking...
+Program Size: Code=58990 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 13 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59014 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59094 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59006 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59094 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling rs485.c...
+linking...
+Program Size: Code=59006 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 0 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(189): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(276): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(279): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(282): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(294): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(297): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(300): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(312): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(315): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(318): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(329): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(339): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(340): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+linking...
+Program Size: Code=58982 RO-data=7350 RW-data=208 ZI-data=1228992  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 13 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'Target 1'
+compiling main.c...
+..\Main\main.c(157): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\Main\main.c(59): warning:  #177-D: variable "send_rs232" was declared but never referenced
+..\Main\main.c(60): warning:  #177-D: variable "len" was declared but never referenced
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(189): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(276): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(279): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(282): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(294): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(297): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(300): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(312): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(315): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(318): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(329): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(339): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(340): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+compiling usart1.c...
+..\USER\RS232\usart1.c(148): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+..\USER\RS232\usart1.c(168): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
+..\USER\RS232\usart1.c(228): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+linking...
+Program Size: Code=58334 RO-data=7290 RW-data=180 ZI-data=1228988  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 19 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N : 17935099 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash 
+ 
+* JLink Info: Could not measure total IR len. TDO is constant high.
+* JLink Info: STM32F2xxx/STM32F4xxx: Can not attach to CPU. Trying connect under reset.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.274V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4800 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...

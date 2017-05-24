@@ -55,7 +55,7 @@ static void Sensor_master_Init(Sensor_master* const me)
 		{
 				me->angle[i] = 0;
 		}
-		for(i = 0; i < 4; i ++)
+		for(i = 0; i < 3; i ++)
 		{
 				me->dis[i] = 0;
 		}
@@ -213,7 +213,7 @@ static cJSON *master_struct_to_json(void* struct_obj)
 		s2j_json_set_array_element(json_Sensor_master,me,double,acc,3);
 		s2j_json_set_array_element(json_Sensor_master,me,double,pal,3);
 		s2j_json_set_array_element(json_Sensor_master,me,double,angle,3);
-		s2j_json_set_array_element(json_Sensor_master,me,double,dis,4);
+		s2j_json_set_array_element(json_Sensor_master,me,double,dis,3);
 
 		s2j_json_set_basic_element(json_Sensor_master, me, string, date);
 		return json_Sensor_master;

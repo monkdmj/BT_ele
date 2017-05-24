@@ -42,7 +42,6 @@
 .\OBJ\usart1.o: ..\USER\LED\led.h
 .\OBJ\usart1.o: ..\USER\BEEP\beep.h
 .\OBJ\usart1.o: ..\USER\usart3_ble\usart3_ble.h
-.\OBJ\usart1.o: ..\USER\HCSR04\timer.h
 .\OBJ\usart1.o: ..\USER\Sensor\Sensor.h
 .\OBJ\usart1.o: ..\USER\RTC\rtc.h
 .\OBJ\usart1.o: ..\USER\MPU6050\mpu6050.h
@@ -54,3 +53,4 @@
 .\OBJ\usart1.o: ..\USER\Sensor\malloc.h
 .\OBJ\usart1.o: ..\USER\24C02\24c02.h
 .\OBJ\usart1.o: ..\USER\W25QXX\w25qxx.h
+.\OBJ\usart1.o: ..\USER\HCSR04\timer.h

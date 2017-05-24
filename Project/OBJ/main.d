@@ -37,7 +37,6 @@
 .\OBJ\main.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dac.h
 .\OBJ\main.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h
 .\OBJ\main.o: ..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h
-.\OBJ\main.o: ..\USER\HCSR04\timer.h
 .\OBJ\main.o: ..\USER\LED\led.h
 .\OBJ\main.o: ..\USER\BEEP\beep.h
 .\OBJ\main.o: ..\USER\LCD\lcd.h
@@ -55,3 +54,4 @@
 .\OBJ\main.o: ..\USER\RS232\usart1.h
 .\OBJ\main.o: ..\USER\24C02\24c02.h
 .\OBJ\main.o: ..\USER\W25QXX\w25qxx.h
+.\OBJ\main.o: ..\USER\HCSR04\timer.h

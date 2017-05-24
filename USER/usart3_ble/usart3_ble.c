@@ -11,6 +11,8 @@
 #include "usart1.h"
 #include "w25qxx.h"
 #include "24c02.h" 
+#include "timer.h"
+#include "rs485.h"	
 
 /*********************************************************************************
 *********************MCUÆôÃ÷ STM32F407Ó¦ÓÃ¿ª·¢°å(ÔöÇ¿°æ)**************************
@@ -27,7 +29,7 @@
 u8 receive_str[UART3_REC_NUM];     //½ÓÊÕ»º´æÊý×é,×î´óUSART_REC_LEN¸ö×Ö½Ú 
 u8 send_str[UART3_TRS_NUM]; 
 u8 uart_byte_count=0;
-u8 APP_mode=0;          //APP¿ØÖÆÄ£Ê½  0£ºÃüÁî¿ØÖÆÇø  1£º½ÓÊÕ·¢ËÍÇø
+//u8 APP_mode=0;          //APP¿ØÖÆÄ£Ê½  0£ºÃüÁî¿ØÖÆÇø  1£º½ÓÊÕ·¢ËÍÇø
 
 //float voice = 0.0f;
 //float dis1 = 0.0f;
@@ -142,17 +144,42 @@ void USART3_IRQHandler(void)
 
 		else if(rec_data=='E')		                         //Èç¹ûE£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢´«ËÍµÄ½áÊøÎ»
 		{
-			if(strcmp("open_led1",(char *)receive_str)==0)         LED0=0;	   //µãÁÁLED1
-			else if(strcmp("close_led1",(char *)receive_str)==0)   LED0=1;	   //¹ØÃðLED1
-			else if(strcmp("open_led2",(char *)receive_str)==0)    LED1=0;	   //¹ØÃðLED1
-			else if(strcmp("close_led2",(char *)receive_str)==0)   LED1=1;	   //¹ØÃðLED1
-			else if(strcmp("open_led3",(char *)receive_str)==0)    LED2=0;	   //¹ØÃðLED1
-			else if(strcmp("close_led3",(char *)receive_str)==0)   LED2=1;	   //¹ØÃðLED1
-			else if(strcmp("open_beep",(char *)receive_str)==0)    BEEP=1; 	   //·äÃùÆ÷Ïì
-			else if(strcmp("close_beep",(char *)receive_str)==0)   BEEP=0; 	   //·äÃùÆ÷²»Ïì
-			else if(strcmp("test",(char *)receive_str)==0)
+			//if(strcmp("open_led1",(char *)receive_str)==0)         LED0=0;	   //µãÁÁLED1
+			//else if(strcmp("close_led1",(char *)receive_str)==0)   LED0=1;	   //¹ØÃðLED1
+			//else if(strcmp("open_led2",(char *)receive_str)==0)    LED1=0;	   //¹ØÃðLED1
+			//else if(strcmp("close_led2",(char *)receive_str)==0)   LED1=1;	   //¹ØÃðLED1
+			//else if(strcmp("open_led3",(char *)receive_str)==0)    LED2=0;	   //¹ØÃðLED1
+			//else if(strcmp("close_led3",(char *)receive_str)==0)   LED2=1;	   //¹ØÃðLED1
+			//else if(strcmp("open_beep",(char *)receive_str)==0)    BEEP=1; 	   //·äÃùÆ÷Ïì
+			//else if(strcmp("close_beep",(char *)receive_str)==0)   BEEP=0; 	   //·äÃùÆ÷²»Ïì
+			if(strcmp("test",(char *)receive_str)==0)
 			{
 				uart3SendChars("correct_OKcorrect_OKcorrect_OK",30);
+			}
+			else if(strcmp("status",(char *)receive_str)==0)
+			{
+				if(RS485_status_success == 1)
+				{
+					uart3SendChars(RS485_receive_status,status_len);
+					//uart1SendChars(RS485_receive_status,status_len);
+				}
+				else
+				{
+					uart3SendChars("No status data",14);
+				}
+				
+			}
+			else if(strcmp("alarm",(char *)receive_str)==0)
+			{
+				if(RS485_alarm_success == 1)
+				{
+					uart3SendChars(RS485_receive_alarm,alarm_len);
+					//uart1SendChars(RS485_receive_alarm,alarm_len);
+				}
+				else
+				{
+					uart3SendChars("No alarm data",13);
+				}
 			}
 			else if(strcmp("dis",(char *)receive_str)==0)
 			{
@@ -171,8 +198,8 @@ void USART3_IRQHandler(void)
 				len = strlen((const char*)package_data);
 
 				//´®¿Ú1¿ÉÒÔ·¢
-				uart1SendChars(package_data,len);
-				//uart3SendChars(package_data,len);
+				//uart1SendChars(package_data,len);
+				uart3SendChars(package_data,len);
 			}
 			else if(strcmp("clear",(char *)receive_str)==0)
 			{
@@ -227,7 +254,7 @@ void USART3_IRQHandler(void)
 					W25QXX_Read((u8*)pac_tmp_len,tmp*4096,2);
 					pac_len = (pac_tmp_len[0] << 8) + pac_tmp_len[1];
 					W25QXX_Read((u8*)datatemp,tmp*4096+2,pac_len);
-					uart1SendChars(datatemp,pac_len);
+					//uart1SendChars(datatemp,pac_len);
 					uart3SendChars(datatemp,pac_len);
 				}
 
@@ -238,7 +265,7 @@ void USART3_IRQHandler(void)
 				//uart1SendChars(package_data,len);
 				//uart3SendChars(package_data,len);
 			}
-			else if(strcmp("send_acc",(char *)receive_str)==0)
+			else if(strcmp("acc",(char *)receive_str)==0)
 			{
 				/*
 				u3_printf("%.3f%s",a[0],"m/s2, ");
@@ -256,7 +283,7 @@ void USART3_IRQHandler(void)
 				len = strlen((const char*)send_str);
 				uart3SendChars(send_str,len);
 			}
-			else if(strcmp("send_pal",(char *)receive_str)==0)
+			else if(strcmp("pal",(char *)receive_str)==0)
 			{
 				/*
 				u3_printf("%.3f%s",w[0],"¶È/s, ");
@@ -274,7 +301,7 @@ void USART3_IRQHandler(void)
 				len = strlen((const char*)send_str);
 				uart3SendChars(send_str,len);
 			}
-			else if(strcmp("send_ang",(char *)receive_str)==0)
+			else if(strcmp("ang",(char *)receive_str)==0)
 			{
 				/*
 				u3_printf("%.3f%s",angle[0],"¶È, ");
@@ -282,7 +309,7 @@ void USART3_IRQHandler(void)
 				u3_printf("%.3f%s",angle[2],"¶È;");
 			    USART_SendData(USART3,0x1a);
 			    */
-			    sprintf(send_str, "%.3f%s",angle[0],"d");
+			  sprintf(send_str, "%.3f%s",angle[0],"d");
 				len = strlen((const char*)send_str);
 				uart3SendChars(send_str,len);
 				sprintf(send_str, "%.3f%s",angle[1],"d");
@@ -292,26 +319,18 @@ void USART3_IRQHandler(void)
 				len = strlen((const char*)send_str);
 				uart3SendChars(send_str,len);
 			}
-			else if(strcmp("send_tem",(char *)receive_str)==0)
+			else if(strcmp("tem",(char *)receive_str)==0)
 			{
-				LED2=!LED2;//µÆÁÁ
+				//LED2=!LED2;//µÆÁÁ
 				/*
 				u3_printf("%.3f%s",T,"¶È;");
 			    USART_SendData(USART3,0x1a);
 			    */
-			    sprintf(send_str, "%.3f%s",T,"C");
+			  sprintf(send_str, "%.3f%s",T,"C");
 				len = strlen((const char*)send_str);
 				uart3SendChars(send_str,len);
 			}
-			else if(strcmp("send_dis1",(char *)receive_str)==0)
-			{
-				LED2=!LED2;//µÆÁÁ
-				
-			  sprintf(send_str, "%.3f%s",dis[0],"cm");
-				len = strlen((const char*)send_str);
-				uart3SendChars(send_str,len);
-			}
-			else if(strcmp("send_voi",(char *)receive_str)==0)
+			else if(strcmp("voi",(char *)receive_str)==0)
 			{
 				/*
 				u3_printf("%.3f%s",T,"¶È;");
@@ -322,20 +341,20 @@ void USART3_IRQHandler(void)
 				len = strlen((const char*)send_str);
 				uart3SendChars(send_str,len);
 			}
-			else if(strcmp("app_mode1",(char *)receive_str)==0)    
-		    {
-				APP_mode=0; 
-		        LCD_DisplayString(20,130,16,"APP_mode: 0  ");
-            	LCD_DisplayString(20,150,16,"Wait APP Control");
-				LCD_Fill_onecolor(0,170,239,319,WHITE);
-		    }//APPÎª×´Ì¬¿ØÖÆÇø
-			else if(strcmp("app_mode2",(char *)receive_str)==0)    
-		    {
-				APP_mode=1;
-				LCD_DisplayString(20,130,16,"APP_mode: 1  ");
-                LCD_DisplayString(20,150,16,"Receive and send");
-				LCD_Fill_onecolor(0,170,239,319,WHITE);
-		    }//APPÎª½ÓÊÕ·¢ËÍÇø
+			// else if(strcmp("app_mode1",(char *)receive_str)==0)    
+		 //    {
+			// 	APP_mode=0; 
+		 //        LCD_DisplayString(20,130,16,"APP_mode: 0  ");
+   //          	LCD_DisplayString(20,150,16,"Wait APP Control");
+			// 	LCD_Fill_onecolor(0,170,239,319,WHITE);
+		 //    }//APPÎª×´Ì¬¿ØÖÆÇø
+			// else if(strcmp("app_mode2",(char *)receive_str)==0)    
+		 //    {
+			// 	APP_mode=1;
+			// 	LCD_DisplayString(20,130,16,"APP_mode: 1  ");
+   //              LCD_DisplayString(20,150,16,"Receive and send");
+			// 	LCD_Fill_onecolor(0,170,239,319,WHITE);
+		 //    }//APPÎª½ÓÊÕ·¢ËÍÇø
 			
 			else if(receive_str[0]=='T')   //Ê±¼äÐ£×¼
 		    {
@@ -350,10 +369,10 @@ void USART3_IRQHandler(void)
 				delay_ms(100);
 				uart3SendChars("correct_OK",10);
 			 }
-		    if(APP_mode==1)   //APPÎª½ÓÊÕ·¢ËÍÇøÊ±£¬ÏÔÊ¾APP·¢À´µÄÊý¾Ý
-			{
-			    LCD_DisplayString(30,190,16,receive_str);	 //¿ÉÒÔ¸ù¾Ý×Ô¼º·¢ËÍµÄÊý¾Ý Ð´ÏàÓ¦µÄ¶¯×÷ °´Ç°ÃæµÄ±àÐ´·½·¨
-			}
+		 //    if(APP_mode==1)   //APPÎª½ÓÊÕ·¢ËÍÇøÊ±£¬ÏÔÊ¾APP·¢À´µÄÊý¾Ý
+			// {
+			//     //LCD_DisplayString(30,190,16,receive_str);	 //¿ÉÒÔ¸ù¾Ý×Ô¼º·¢ËÍµÄÊý¾Ý Ð´ÏàÓ¦µÄ¶¯×÷ °´Ç°ÃæµÄ±àÐ´·½·¨
+			// }
 				
 			for(uart_byte_count=0;uart_byte_count<32;uart_byte_count++)receive_str[uart_byte_count]=0x00;
 			uart_byte_count=0;    

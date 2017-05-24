@@ -40,3 +40,5 @@
 .\OBJ\rs485.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdlib.h
 .\OBJ\rs485.o: ..\USER\LED\led.h
 .\OBJ\rs485.o: ..\USER\BEEP\beep.h
+.\OBJ\rs485.o: ..\USER\RS232\usart1.h
+.\OBJ\rs485.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdio.h
