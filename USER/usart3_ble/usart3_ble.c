@@ -207,6 +207,11 @@ void USART3_IRQHandler(void)
 				AT24C02_WriteByte(0, 0);
 				full_flag = 0;
 			}
+			// else if(strcmp("set",(char *)receive_str)==0)
+			// {
+			// 	//............clear records
+			// 	AT24C02_WriteByte(0, 0xFA);
+			// }
 			else if('N'==receive_str[0])
 			{
 				//............test
