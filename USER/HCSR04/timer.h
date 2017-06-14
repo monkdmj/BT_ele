@@ -16,8 +16,8 @@
 
 void TIM2_Init(u16 auto_data,u16 fractional);
 
-#define Trgger PBout(7)
-#define ECHO PBin(6)
+#define Trgger PBout(9)
+#define ECHO PBin(8)
 
 #define Trgger1 PCout(3)
 #define ECHO1 PCin(2)

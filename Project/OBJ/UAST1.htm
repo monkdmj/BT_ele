@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\OBJ\UAST1.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\OBJ\UAST1.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed May 24 20:55:26 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed Jun 14 18:49:00 2017
 <BR><P>
 <H3>Maximum Stack Usage =        696 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1089,7 +1089,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 696 + Unknown Stack Size
 <LI>Call Chain = USART3_IRQHandler &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
+<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_Read
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
@@ -1415,7 +1415,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40_41xxx.o(RESET)
 </UL>
-<P><STRONG><a name="[136]"></a>IIC_Init</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, 24c02.o(.text))
+<P><STRONG><a name="[136]"></a>IIC_Init</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, 24c02.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = IIC_Init &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
@@ -1593,7 +1593,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_Init
 </UL>
 
-<P><STRONG><a name="[b3]"></a>W25QXX_Init</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, w25qxx.o(.text))
+<P><STRONG><a name="[b3]"></a>W25QXX_Init</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, w25qxx.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = W25QXX_Init &rArr; SPI1_Init &rArr; GPIO_PinAFConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
@@ -1694,7 +1694,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_SectorWrite
 </UL>
 
-<P><STRONG><a name="[135]"></a>W25QXX_SectorWrite</STRONG> (Thumb, 204 bytes, Stack size 40 bytes, w25qxx.o(.text))
+<P><STRONG><a name="[135]"></a>W25QXX_SectorWrite</STRONG> (Thumb, 202 bytes, Stack size 40 bytes, w25qxx.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = W25QXX_SectorWrite &rArr; W25QXX_PageWrite &rArr; W25QXX_Write_Page &rArr; W25QXX_Wait_Busy &rArr; W25QXX_ReadSR &rArr; SPI1_ReadWriteByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_Read
@@ -2146,18 +2146,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running
 </UL>
 
-<P><STRONG><a name="[1af]"></a>SR04_Trg1</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, timer.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SR04_Trg1
+<P><STRONG><a name="[1af]"></a>SR04_Trg1</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, timer.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
+</UL>
+
+<P><STRONG><a name="[1b0]"></a>SR04_Trg2</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, timer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SR04_Trg2
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
-</UL>
-
-<P><STRONG><a name="[1b0]"></a>SR04_Trg2</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, timer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-</UL>
-<BR>[Called By]<UL><LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
+<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
 </UL>
 
 <P><STRONG><a name="[1b1]"></a>SR04_Cnt</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, timer.o(.text), UNUSED)
@@ -2166,18 +2166,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running
 </UL>
 
-<P><STRONG><a name="[1b3]"></a>SR04_Cnt1</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, timer.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SR04_Cnt1
+<P><STRONG><a name="[1b3]"></a>SR04_Cnt1</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, timer.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetCounter
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
+</UL>
+
+<P><STRONG><a name="[1b4]"></a>SR04_Cnt2</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, timer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SR04_Cnt2
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetCounter
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
-</UL>
-
-<P><STRONG><a name="[1b4]"></a>SR04_Cnt2</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, timer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[1b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetCounter
-</UL>
-<BR>[Called By]<UL><LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
+<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
 </UL>
 
 <P><STRONG><a name="[1b5]"></a>hcrs04_running</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, timer.o(.text), UNUSED)
@@ -2186,20 +2186,20 @@ Global Symbols
 <LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SR04_Trg
 </UL>
 
-<P><STRONG><a name="[10d]"></a>hcrs04_running1</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, timer.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = hcrs04_running1 &rArr; SR04_Cnt1
-</UL>
-<BR>[Calls]<UL><LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
+<P><STRONG><a name="[1b6]"></a>hcrs04_running1</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, timer.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 <LI><a href="#[1b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SR04_Cnt1
 <LI><a href="#[1af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SR04_Trg1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
-</UL>
 
-<P><STRONG><a name="[1b6]"></a>hcrs04_running2</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, timer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
+<P><STRONG><a name="[10d]"></a>hcrs04_running2</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, timer.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = hcrs04_running2 &rArr; SR04_Cnt2
+</UL>
+<BR>[Calls]<UL><LI><a href="#[1ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 <LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SR04_Cnt2
 <LI><a href="#[1b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SR04_Trg2
+</UL>
+<BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
 <P><STRONG><a name="[29]"></a>TIM2_IRQHandler</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, timer.o(.text))
@@ -3140,8 +3140,8 @@ Global Symbols
 <P><STRONG><a name="[322]"></a>TIM_SetClockDivision</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[1ad]"></a>TIM_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
-<LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
+<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running2
+<LI><a href="#[1b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running1
 <LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hcrs04_running
 <LI><a href="#[1aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Init
 </UL>

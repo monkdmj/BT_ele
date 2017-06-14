@@ -25,20 +25,20 @@ void SPI1_Init(void)
   GPIO_InitTypeDef  GPIO_InitStructure;
   SPI_InitTypeDef  SPI_InitStructure;
 	
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);           //使能GPIOB时钟
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);           //使能GPIOB时钟
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);            //使能SPI1时钟
  
   //GPIOFB3,4,5IO口初始化设置
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5; //PB3~5复用功能输出	
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7; //PB3~5复用功能输出	
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;                    //复用功能
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;                  //推挽输出
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;              //100MHz
   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;                    //上拉
-  GPIO_Init(GPIOB, &GPIO_InitStructure);                          //初始化IO口
+  GPIO_Init(GPIOA, &GPIO_InitStructure);                          //初始化IO口
 	
-	GPIO_PinAFConfig(GPIOB,GPIO_PinSource3,GPIO_AF_SPI1);           //PB3复用为 SPI1
-	GPIO_PinAFConfig(GPIOB,GPIO_PinSource4,GPIO_AF_SPI1);           //PB4复用为 SPI1
-	GPIO_PinAFConfig(GPIOB,GPIO_PinSource5,GPIO_AF_SPI1);           //PB5复用为 SPI1
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource5,GPIO_AF_SPI1);           //PB3复用为 SPI1
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource6,GPIO_AF_SPI1);           //PB4复用为 SPI1
+	GPIO_PinAFConfig(GPIOA,GPIO_PinSource7,GPIO_AF_SPI1);           //PB5复用为 SPI1
  
 	//SPI口初始化
 	RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1,ENABLE);             //复位SPI1

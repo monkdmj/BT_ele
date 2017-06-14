@@ -185,8 +185,12 @@ void USART3_IRQHandler(void)
 			{
 				//hcrs04_running();
 				//sprintf(send_str, "%.3f%s",dis[0],"cm");
-				hcrs04_running1();
-				sprintf(send_str, "%.3f%s",dis[1],"cm");
+				hcrs04_running2();
+				sprintf(send_str, "%.3f%s",dis[2],"cm");
+				// hcrs04_running1();
+				// sprintf(send_str, "%.3f%s",dis[1],"cm");
+				// hcrs04_running();
+				// sprintf(send_str, "%.3f%s",dis[0],"cm");
 				//hcrs04_running2();
 				//sprintf(send_str, "%.3f%s",dis[2],"cm");
 				len = strlen((const char*)send_str);

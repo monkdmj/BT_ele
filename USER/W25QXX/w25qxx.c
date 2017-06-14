@@ -2,106 +2,106 @@
 #include "w25qxx.h"  
 
 /*********************************************************************************
-*************************MCU启明 STM32F407核心开发板******************************
+*************************MCU脝么脙梅 STM32F407潞脣脨脛驴陋路垄掳氓******************************
 **********************************************************************************
-* 文件名称: w25qxx.c                                                             *
-* 文件简述：W25Q128使用                                                          *
-* 创建日期：2015.03.10                                                           *
-* 版    本：V1.0                                                                 *
-* 作    者：Clever                                                               *
-* 说    明：25Q128容量为16M,共有128个Block,4096个Sector                          *
-            255byte为一页                                                        *
-						4Kbytes为一个扇区                                                    *
-            16个扇区为一个块                                                     *
+* 脦脛录镁脙没鲁脝: w25qxx.c                                                             *
+* 脦脛录镁录貌脢枚拢潞W25Q128脢鹿脫脙                                                          *
+* 麓麓陆篓脠脮脝脷拢潞2015.03.10                                                           *
+* 掳忙    卤戮拢潞V1.0                                                                 *
+* 脳梅    脮脽拢潞Clever                                                               *
+* 脣碌    脙梅拢潞25Q128脠脻脕驴脦陋16M,鹿虏脫脨128赂枚Block,4096赂枚Sector                          *
+            255byte脦陋脪禄脪鲁                                                        *
+						4Kbytes脦陋脪禄赂枚脡脠脟酶                                                    *
+            16赂枚脡脠脟酶脦陋脪禄赂枚驴茅                                                     *
 *********************************************************************************/	
  
 u16 W25QXX_ID;	 
 													 
-//初始化SPI FLASH的IO口
+//鲁玫脢录禄炉SPI FLASH碌脛IO驴脷
 void W25QXX_Init(void)
 { 
   GPIO_InitTypeDef  GPIO_InitStructure;
  
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOG, ENABLE); //使能GPIOG时钟
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); //脢鹿脛脺GPIOG脢卤脰脫
 
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;             //PG8
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;         //输出
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;        //推挽输出
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;             //PG8
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;         //脢盲鲁枚
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;        //脥脝脥矛脢盲鲁枚
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;    //100MHz
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;          //上拉
-  GPIO_Init(GPIOG, &GPIO_InitStructure);                //初始化
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;          //脡脧脌颅
+  GPIO_Init(GPIOC, &GPIO_InitStructure);                //鲁玫脢录禄炉
 
-	W25QXX_CS=1;			                                    //SPI FLASH不选中
-	SPI1_Init();		   			                              //初始化SPI
-	SPI1_Setclock(SPI_BaudRatePrescaler_2);		            //设置为42M时钟,高速模式 
-	W25QXX_ID=W25QXX_ReadID();	                          //读取FLASH ID.
+	W25QXX_CS=1;			                                    //SPI FLASH虏禄脩隆脰脨
+	SPI1_Init();		   			                              //鲁玫脢录禄炉SPI
+	SPI1_Setclock(SPI_BaudRatePrescaler_4);		            //脡猫脰脙脦陋21M脢卤脰脫,赂脽脣脵脛拢脢陆 
+	W25QXX_ID=W25QXX_ReadID();	                          //露脕脠隆FLASH ID.
 }  
 /****************************************************************************
-* 名    称: u8 W25QXX_ReadSR(void) 
-* 功    能：读取W25QXX的状态寄存器
-* 入口参数：无
-* 返回参数：状态寄存器的值
-* 说    明： 		     
+* 脙没    鲁脝: u8 W25QXX_ReadSR(void) 
+* 鹿娄    脛脺拢潞露脕脠隆W25QXX碌脛脳麓脤卢录脛麓忙脝梅
+* 脠毛驴脷虏脦脢媒拢潞脦脼
+* 路碌禄脴虏脦脢媒拢潞脳麓脤卢录脛麓忙脝梅碌脛脰碌
+* 脣碌    脙梅拢潞 		     
 ****************************************************************************/
 u8 W25QXX_ReadSR(void)   
 {  
 	u8 byte=0;   
-	W25QXX_CS=0;                                  //使能器件   
-	SPI1_ReadWriteByte(W25X_CMD_ReadStatusReg);   //发送读取状态寄存器命令    
-	byte=SPI1_ReadWriteByte(0Xff);                //读取一个字节  
-	W25QXX_CS=1;                                  //取消片选     
+	W25QXX_CS=0;                                  //脢鹿脛脺脝梅录镁   
+	SPI1_ReadWriteByte(W25X_CMD_ReadStatusReg);   //路垄脣脥露脕脠隆脳麓脤卢录脛麓忙脝梅脙眉脕卯    
+	byte=SPI1_ReadWriteByte(0Xff);                //露脕脠隆脪禄赂枚脳脰陆脷  
+	W25QXX_CS=1;                                  //脠隆脧没脝卢脩隆     
 	return byte;   
 } 
 /****************************************************************************
-* 名    称: void W25QXX_Write_SR(u8 sr)
-* 功    能：写W25QXX状态寄存器
-* 入口参数：写入的值
-* 返回参数：无
-* 说    明： 		     
+* 脙没    鲁脝: void W25QXX_Write_SR(u8 sr)
+* 鹿娄    脛脺拢潞脨麓W25QXX脳麓脤卢录脛麓忙脝梅
+* 脠毛驴脷虏脦脢媒拢潞脨麓脠毛碌脛脰碌
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞 		     
 ****************************************************************************/
 void W25QXX_Write_SR(u8 sr)   
 {   
-	W25QXX_CS=0;                                 //使能器件   
-	SPI1_ReadWriteByte(W25X_CMD_WriteStatusReg); //发送写取状态寄存器命令    
-	SPI1_ReadWriteByte(sr);                      //写入一个字节  
-	W25QXX_CS=1;                                 //取消片选     	      
+	W25QXX_CS=0;                                 //脢鹿脛脺脝梅录镁   
+	SPI1_ReadWriteByte(W25X_CMD_WriteStatusReg); //路垄脣脥脨麓脠隆脳麓脤卢录脛麓忙脝梅脙眉脕卯    
+	SPI1_ReadWriteByte(sr);                      //脨麓脠毛脪禄赂枚脳脰陆脷  
+	W25QXX_CS=1;                                 //脠隆脧没脝卢脩隆     	      
 } 
 
-//W25QXX写使能	 
+//W25QXX脨麓脢鹿脛脺	 
 void W25QXX_Write_Enable(void)   
 {
-	W25QXX_CS=0;                               //使能器件   
-  SPI1_ReadWriteByte(W25X_CMD_WriteEnable);  //发送写使能  
-	W25QXX_CS=1;                               //取消片选     	      
+	W25QXX_CS=0;                               //脢鹿脛脺脝梅录镁   
+  SPI1_ReadWriteByte(W25X_CMD_WriteEnable);  //路垄脣脥脨麓脢鹿脛脺  
+	W25QXX_CS=1;                               //脠隆脧没脝卢脩隆     	      
 } 
-//等待空闲
+//碌脠麓媒驴脮脧脨
 void W25QXX_Wait_Busy(void)   
 {   
-	while((W25QXX_ReadSR()&0x01)==0x01);      //等待BUSY位清空
+	while((W25QXX_ReadSR()&0x01)==0x01);      //碌脠麓媒BUSY脦禄脟氓驴脮
 } 
-//W25QXX写禁止	 
+//W25QXX脨麓陆没脰鹿	 
 void W25QXX_Write_Disable(void)   
 {  
-	W25QXX_CS=0;                                //使能器件   
-  SPI1_ReadWriteByte(W25X_CMD_WriteDisable);  //发送写禁止指令    
-	W25QXX_CS=1;                                //取消片选     	      
+	W25QXX_CS=0;                                //脢鹿脛脺脝梅录镁   
+  SPI1_ReadWriteByte(W25X_CMD_WriteDisable);  //路垄脣脥脨麓陆没脰鹿脰赂脕卯    
+	W25QXX_CS=1;                                //脠隆脧没脝卢脩隆     	      
 } 
 /****************************************************************************
-* 名    称: u16 W25QXX_ReadID(void)
-* 功    能：读取芯片ID
-* 入口参数：无
-* 返回参数：芯片ID
-* 说    明：0XEF13,表示芯片型号为W25Q80  
-            0XEF14,表示芯片型号为W25Q16    
-            0XEF15,表示芯片型号为W25Q32  
-            0XEF16,表示芯片型号为W25Q64 
-            0XEF17,表示芯片型号为W25Q128      
+* 脙没    鲁脝: u16 W25QXX_ReadID(void)
+* 鹿娄    脛脺拢潞露脕脠隆脨戮脝卢ID
+* 脠毛驴脷虏脦脢媒拢潞脦脼
+* 路碌禄脴虏脦脢媒拢潞脨戮脝卢ID
+* 脣碌    脙梅拢潞0XEF13,卤铆脢戮脨戮脝卢脨脥潞脜脦陋W25Q80  
+            0XEF14,卤铆脢戮脨戮脝卢脨脥潞脜脦陋W25Q16    
+            0XEF15,卤铆脢戮脨戮脝卢脨脥潞脜脦陋W25Q32  
+            0XEF16,卤铆脢戮脨戮脝卢脨脥潞脜脦陋W25Q64 
+            0XEF17,卤铆脢戮脨戮脝卢脨脥潞脜脦陋W25Q128      
 ****************************************************************************/  
 u16 W25QXX_ReadID(void)
 {
 	u16 IDnum = 0;	  
 	W25QXX_CS=0;				    
-	SPI1_ReadWriteByte(0x90); //发送读取ID命令	    
+	SPI1_ReadWriteByte(0x90); //路垄脣脥露脕脠隆ID脙眉脕卯	    
 	SPI1_ReadWriteByte(0x00); 	    
 	SPI1_ReadWriteByte(0x00); 	    
 	SPI1_ReadWriteByte(0x00); 	 			   
@@ -111,72 +111,72 @@ u16 W25QXX_ReadID(void)
 	return IDnum;
 } 
 /****************************************************************************
-* 名    称: void W25QXX_Erase_Chip(void) 
-* 功    能：擦除整个芯片		  
-* 入口参数：无
-* 返回参数：无
-* 说    明： 		     
+* 脙没    鲁脝: void W25QXX_Erase_Chip(void) 
+* 鹿娄    脛脺拢潞虏脕鲁媒脮没赂枚脨戮脝卢		  
+* 脠毛驴脷虏脦脢媒拢潞脦脼
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞 		     
 ****************************************************************************/
 void W25QXX_Erase_Chip(void)   
 {                                   
     W25QXX_Write_Enable();                   
     W25QXX_Wait_Busy();   
-  	W25QXX_CS=0;                             //使能器件   
-    SPI1_ReadWriteByte(W25X_CMD_ChipErase);  //发送片擦除命令  
-	  W25QXX_CS=1;                             //取消片选     	      
-	  W25QXX_Wait_Busy();   				           //等待芯片擦除结束
+  	W25QXX_CS=0;                             //脢鹿脛脺脝梅录镁   
+    SPI1_ReadWriteByte(W25X_CMD_ChipErase);  //路垄脣脥脝卢虏脕鲁媒脙眉脕卯  
+	  W25QXX_CS=1;                             //脠隆脧没脝卢脩隆     	      
+	  W25QXX_Wait_Busy();   				           //碌脠麓媒脨戮脝卢虏脕鲁媒陆谩脢酶
 }  
 /****************************************************************************
-* 名    称: void W25QXX_Erase_Sector(u32 First_Addr)
-* 功    能：擦除某个扇区的首地址	  
-* 入口参数：First_Addr:扇区地址
-* 返回参数：无
-* 说    明： 		     
+* 脙没    鲁脝: void W25QXX_Erase_Sector(u32 First_Addr)
+* 鹿娄    脛脺拢潞虏脕鲁媒脛鲁赂枚脡脠脟酶碌脛脢脳碌脴脰路	  
+* 脠毛驴脷虏脦脢媒拢潞First_Addr:脡脠脟酶碌脴脰路
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞 		     
 ****************************************************************************/
 void W25QXX_Erase_Sector(u32 First_Addr)   
 {    
  	  First_Addr*=4096;
     W25QXX_Write_Enable();                  
     W25QXX_Wait_Busy();   
-  	W25QXX_CS=0;                                  //使能器件   
-    SPI1_ReadWriteByte(W25X_CMD_SectorErase);     //发送扇区擦除指令 
-    SPI1_ReadWriteByte((u8)((First_Addr)>>16));   //发送地址    
+  	W25QXX_CS=0;                                  //脢鹿脛脺脝梅录镁   
+    SPI1_ReadWriteByte(W25X_CMD_SectorErase);     //路垄脣脥脡脠脟酶虏脕鲁媒脰赂脕卯 
+    SPI1_ReadWriteByte((u8)((First_Addr)>>16));   //路垄脣脥碌脴脰路    
     SPI1_ReadWriteByte((u8)((First_Addr)>>8));   
     SPI1_ReadWriteByte((u8)First_Addr);  
-	  W25QXX_CS=1;                                  //取消片选     	      
-    W25QXX_Wait_Busy();   				                //等待擦除完成
+	  W25QXX_CS=1;                                  //脠隆脧没脝卢脩隆     	      
+    W25QXX_Wait_Busy();   				                //碌脠麓媒虏脕鲁媒脥锚鲁脡
 }  
-//进入掉电模式
+//陆酶脠毛碌么碌莽脛拢脢陆
 void W25QXX_PowerDown(void)   
 { 
-  	W25QXX_CS=0;                             //使能器件   
-    SPI1_ReadWriteByte(W25X_CMD_PowerDown);  //发送掉电命令  
-	  W25QXX_CS=1;                             //取消片选     	      
+  	W25QXX_CS=0;                             //脢鹿脛脺脝梅录镁   
+    SPI1_ReadWriteByte(W25X_CMD_PowerDown);  //路垄脣脥碌么碌莽脙眉脕卯  
+	  W25QXX_CS=1;                             //脠隆脧没脝卢脩隆     	      
     delay_us(3);                             
 }   
-//唤醒
+//禄陆脨脩
 void W25QXX_WAKEUP(void)   
 {  
-  	W25QXX_CS=0;                                      //使能器件   
-    SPI1_ReadWriteByte(W25X_CMD_ReleasePowerDown);    //发送唤醒命令
-	  W25QXX_CS=1;                                      //取消片选     	      
+  	W25QXX_CS=0;                                      //脢鹿脛脺脝梅录镁   
+    SPI1_ReadWriteByte(W25X_CMD_ReleasePowerDown);    //路垄脣脥禄陆脨脩脙眉脕卯
+	  W25QXX_CS=1;                                      //脠隆脧没脝卢脩隆     	      
     delay_us(3);                                     
 }   
 
 /****************************************************************************
-* 名    称: void W25QXX_Read(u8* pBuffer,u32 ReadAddr,u16 NumByteToRead)
-* 功    能：指定地址开始读取指定长度的数据
-* 入口参数：DataBuffer:数据存储区
-            StartAddress:开始读取的地址(24bit)
-            ByteCount:要读取的字节数(最大65535)
-* 返回参数：无
-* 说    明： 		     
+* 脙没    鲁脝: void W25QXX_Read(u8* pBuffer,u32 ReadAddr,u16 NumByteToRead)
+* 鹿娄    脛脺拢潞脰赂露篓碌脴脰路驴陋脢录露脕脠隆脰赂露篓鲁陇露脠碌脛脢媒戮脻
+* 脠毛驴脷虏脦脢媒拢潞DataBuffer:脢媒戮脻麓忙麓垄脟酶
+            StartAddress:驴陋脢录露脕脠隆碌脛碌脴脰路(24bit)
+            ByteCount:脪陋露脕脠隆碌脛脳脰陆脷脢媒(脳卯麓贸65535)
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞 		     
 ****************************************************************************/
 void W25QXX_Read(u8* DataBuffer,u32 StartAddress,u16 ByteCount)   
 {  										    
-	W25QXX_CS=0;                                 //使能器件   
-    SPI1_ReadWriteByte(W25X_CMD_ReadData);     //发送读取命令   
-    SPI1_ReadWriteByte((u8)((StartAddress)>>16));  //发送24bit地址    
+	W25QXX_CS=0;                                 //脢鹿脛脺脝梅录镁   
+    SPI1_ReadWriteByte(W25X_CMD_ReadData);     //路垄脣脥露脕脠隆脙眉脕卯   
+    SPI1_ReadWriteByte((u8)((StartAddress)>>16));  //路垄脣脥24bit碌脴脰路    
     SPI1_ReadWriteByte((u8)((StartAddress)>>8));   
     SPI1_ReadWriteByte((u8)StartAddress);   
 	
@@ -188,20 +188,20 @@ void W25QXX_Read(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
 	W25QXX_CS=1;  				    	      
 }  
 /****************************************************************************
-* 名    称: void W25QXX_Write_Page(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
-* 功    能：在一页内写入少于256个字节的数据  
-* 入口参数：DataBuffer:数据存储区
-            StartAddress:开始写入的地址(24bit)
-            ByteCount:要写入的字节数(最大256)
-* 返回参数：无
-* 说    明： 		     
+* 脙没    鲁脝: void W25QXX_Write_Page(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
+* 鹿娄    脛脺拢潞脭脷脪禄脪鲁脛脷脨麓脠毛脡脵脫脷256赂枚脳脰陆脷碌脛脢媒戮脻  
+* 脠毛驴脷虏脦脢媒拢潞DataBuffer:脢媒戮脻麓忙麓垄脟酶
+            StartAddress:驴陋脢录脨麓脠毛碌脛碌脴脰路(24bit)
+            ByteCount:脪陋脨麓脠毛碌脛脳脰陆脷脢媒(脳卯麓贸256)
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞 		     
 ****************************************************************************/
 void W25QXX_Write_Page(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
 {  
 	W25QXX_Write_Enable();                   
-	  W25QXX_CS=0;                                   //使能器件   
-    SPI1_ReadWriteByte(W25X_CMD_PageProgram);      //发送写页命令   
-    SPI1_ReadWriteByte((u8)((StartAddress)>>16));  //发送地址    
+	  W25QXX_CS=0;                                   //脢鹿脛脺脝梅录镁   
+    SPI1_ReadWriteByte(W25X_CMD_PageProgram);      //路垄脣脥脨麓脪鲁脙眉脕卯   
+    SPI1_ReadWriteByte((u8)((StartAddress)>>16));  //路垄脣脥碌脴脰路    
     SPI1_ReadWriteByte((u8)((StartAddress)>>8));   
     SPI1_ReadWriteByte((u8)StartAddress);   
 		while (ByteCount--)
@@ -209,18 +209,18 @@ void W25QXX_Write_Page(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
 			  SPI1_ReadWriteByte(*DataBuffer);
 			  DataBuffer++;
 			}	
-	W25QXX_CS=1;                   //取消片选 
-	W25QXX_Wait_Busy();					   //等待写入结束
+	W25QXX_CS=1;                   //脠隆脧没脝卢脩隆 
+	W25QXX_Wait_Busy();					   //碌脠麓媒脨麓脠毛陆谩脢酶
 }
 /****************************************************************************
-* 名    称: void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount) 
-* 功    能：按页写入数据
-* 入口参数：DataBuffer:数据存储区
-            StartAddress:开始写入的地址(24bit)
-            ByteCount:要写入的字节数(最大256)
-* 返回参数：无
-* 说    明：有自动换页功能，因为该函数没有在写之前判断要写入的地址上的数据是否为
-            空，所以在写入之前必须确保该地址上的数据为空0xFF，否则写入失败 		     
+* 脙没    鲁脝: void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount) 
+* 鹿娄    脛脺拢潞掳麓脪鲁脨麓脠毛脢媒戮脻
+* 脠毛驴脷虏脦脢媒拢潞DataBuffer:脢媒戮脻麓忙麓垄脟酶
+            StartAddress:驴陋脢录脨麓脠毛碌脛碌脴脰路(24bit)
+            ByteCount:脪陋脨麓脠毛碌脛脳脰陆脷脢媒(脳卯麓贸256)
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞脫脨脳脭露炉禄禄脪鲁鹿娄脛脺拢卢脪貌脦陋赂脙潞炉脢媒脙禄脫脨脭脷脨麓脰庐脟掳脜脨露脧脪陋脨麓脠毛碌脛碌脴脰路脡脧碌脛脢媒戮脻脢脟路帽脦陋
+            驴脮拢卢脣霉脪脭脭脷脨麓脠毛脰庐脟掳卤脴脨毛脠路卤拢赂脙碌脴脰路脡脧碌脛脢媒戮脻脦陋驴脮0xFF拢卢路帽脭貌脨麓脠毛脢搂掳脺 		     
 ****************************************************************************/
 void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)   
 {
@@ -231,13 +231,13 @@ void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
   NumOfPage =  ByteCount / 256;
   NumOfSingle = ByteCount % 256;
 
-  if (Surplus_Addr == 0) //开始写的地址刚好是页开始的地址
+  if (Surplus_Addr == 0) //驴陋脢录脨麓碌脛碌脴脰路赂脮潞脙脢脟脪鲁驴陋脢录碌脛碌脴脰路
   {
-    if (NumOfPage == 0)  // ByteCount < 256（一页总的字节数）  
+    if (NumOfPage == 0)  // ByteCount < 256拢篓脪禄脪鲁脳脺碌脛脳脰陆脷脢媒拢漏  
     {
       W25QXX_Write_Page(DataBuffer, StartAddress, ByteCount);
     }
-    else                 // ByteCount > 256（一页总的字节数）  
+    else                 // ByteCount > 256拢篓脪禄脪鲁脳脺碌脛脳脰陆脷脢媒拢漏  
     {
       while (NumOfPage--)
       {
@@ -248,9 +248,9 @@ void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
       W25QXX_Write_Page(DataBuffer, StartAddress, NumOfSingle);
     }
   }
-  else ///开始写的地址不在页的首地址上
+  else ///驴陋脢录脨麓碌脛碌脴脰路虏禄脭脷脪鲁碌脛脢脳碌脴脰路脡脧
   {
-    if (NumOfPage == 0) // ByteCount < 256（一页总的字节数） 
+    if (NumOfPage == 0) // ByteCount < 256拢篓脪禄脪鲁脳脺碌脛脳脰陆脷脢媒拢漏 
     {
       if (NumOfSingle > Surplus_count)  
       {
@@ -265,7 +265,7 @@ void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
         W25QXX_Write_Page(DataBuffer, StartAddress, ByteCount);
       }
     }
-    else //ByteCount > 256（一页总的字节数）  
+    else //ByteCount > 256拢篓脪禄脪鲁脳脺碌脛脳脰陆脷脢媒拢漏  
     {
       ByteCount -= Surplus_count;
       NumOfPage =  ByteCount / 256;
@@ -288,13 +288,13 @@ void W25QXX_PageWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
   }
 } 
 /****************************************************************************
-* 名    称: void W25QXX_SectorWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
-* 功    能：按扇区写入数据
-* 入口参数：DataBuffer:数据存储区
-            StartAddress:开始写入的地址(24bit)
-            ByteCount:要写入的字节数(最大65536)
-* 返回参数：无
-* 说    明：写入之前判断改地址上的数据是否为空，不是先擦除再写入，该函数参考网上代码http://www.openedv.com      
+* 脙没    鲁脝: void W25QXX_SectorWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
+* 鹿娄    脛脺拢潞掳麓脡脠脟酶脨麓脠毛脢媒戮脻
+* 脠毛驴脷虏脦脢媒拢潞DataBuffer:脢媒戮脻麓忙麓垄脟酶
+            StartAddress:驴陋脢录脨麓脠毛碌脛碌脴脰路(24bit)
+            ByteCount:脪陋脨麓脠毛碌脛脳脰陆脷脢媒(脳卯麓贸65536)
+* 路碌禄脴虏脦脢媒拢潞脦脼
+* 脣碌    脙梅拢潞脨麓脠毛脰庐脟掳脜脨露脧赂脛碌脴脰路脡脧碌脛脢媒戮脻脢脟路帽脦陋驴脮拢卢虏禄脢脟脧脠虏脕鲁媒脭脵脨麓脠毛拢卢赂脙潞炉脢媒虏脦驴录脥酶脡脧麓煤脗毛http://www.openedv.com      
 ****************************************************************************/
 u8 TS_BUFFER[4096];	
 void W25QXX_SectorWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)   
@@ -307,43 +307,43 @@ void W25QXX_SectorWrite(u8* DataBuffer,u32 StartAddress,u16 ByteCount)
 	u8 * Cache_BUF;	   
   Cache_BUF=TS_BUFFER;	  
 	
- 	secaddr=StartAddress/4096;//扇区地址  
-	secused=StartAddress%4096;//写入的地址在扇区内的偏移（从该扇区的首地址开始已使用的字节数）
-	Surplus_count=4096-secused;//该扇区剩余空间大小   
+ 	secaddr=StartAddress/4096;//脡脠脟酶碌脴脰路  
+	secused=StartAddress%4096;//脨麓脠毛碌脛碌脴脰路脭脷脡脠脟酶脛脷碌脛脝芦脪脝拢篓麓脫赂脙脡脠脟酶碌脛脢脳碌脴脰路驴陋脢录脪脩脢鹿脫脙碌脛脳脰陆脷脢媒拢漏
+	Surplus_count=4096-secused;//赂脙脡脠脟酶脢拢脫脿驴脮录盲麓贸脨隆   
 
- 	if(ByteCount<=Surplus_count)Surplus_count=ByteCount;//不大于4096个字节
+ 	if(ByteCount<=Surplus_count)Surplus_count=ByteCount;//虏禄麓贸脫脷4096赂枚脳脰陆脷
 	while(1) 
 	{	
-		W25QXX_Read(Cache_BUF,secaddr*4096,4096);//读出整个扇区的内容
+		W25QXX_Read(Cache_BUF,secaddr*4096,4096);//露脕鲁枚脮没赂枚脡脠脟酶碌脛脛脷脠脻
 		      i=0;
 		while(Cache_BUF[secused+i]==0XFF)
 				{
 					i++;
 					if(i==Surplus_count)break;
 				}
-		if(i<Surplus_count)//需要擦除
+		if(i<Surplus_count)//脨猫脪陋虏脕鲁媒
 				{
-					W25QXX_Erase_Sector(secaddr);//擦除这个扇区
-					for(i=0;i<Surplus_count;i++)	   //复制
+					W25QXX_Erase_Sector(secaddr);//虏脕鲁媒脮芒赂枚脡脠脟酶
+					for(i=0;i<Surplus_count;i++)	   //赂麓脰脝
 					{
 						Cache_BUF[i+secused]=DataBuffer[i];	  
 					}
-					W25QXX_PageWrite(Cache_BUF,secaddr*4096,4096);//写入整个扇区  
+					W25QXX_PageWrite(Cache_BUF,secaddr*4096,4096);//脨麓脠毛脮没赂枚脡脠脟酶  
 
 				}
 		else
-			  W25QXX_PageWrite(DataBuffer,StartAddress,Surplus_count);//写已经擦除了的,直接写入扇区剩余区间. 				   
-		if(ByteCount==Surplus_count)break;//写入结束了
-		else//写入未结束
+			  W25QXX_PageWrite(DataBuffer,StartAddress,Surplus_count);//脨麓脪脩戮颅虏脕鲁媒脕脣碌脛,脰卤陆脫脨麓脠毛脡脠脟酶脢拢脫脿脟酶录盲. 				   
+		if(ByteCount==Surplus_count)break;//脨麓脠毛陆谩脢酶脕脣
+		else//脨麓脠毛脦麓陆谩脢酶
 				{
-					secaddr++;//扇区地址增1
-					secused=0;//偏移位置为0 	 
+					secaddr++;//脡脠脟酶碌脴脰路脭枚1
+					secused=0;//脝芦脪脝脦禄脰脙脦陋0 	 
 
-					DataBuffer+=Surplus_count;  //指针偏移
-					StartAddress+=Surplus_count;//写地址偏移	   
-					ByteCount-=Surplus_count;				//字节数递减
-					if(ByteCount>4096)Surplus_count=4096;	//下一个扇区还是写不完
-					else Surplus_count=ByteCount;			//下一个扇区可以写完了
+					DataBuffer+=Surplus_count;  //脰赂脮毛脝芦脪脝
+					StartAddress+=Surplus_count;//脨麓碌脴脰路脝芦脪脝	   
+					ByteCount-=Surplus_count;				//脳脰陆脷脢媒碌脻录玫
+					if(ByteCount>4096)Surplus_count=4096;	//脧脗脪禄赂枚脡脠脟酶禄鹿脢脟脨麓虏禄脥锚
+					else Surplus_count=ByteCount;			//脧脗脪禄赂枚脡脠脟酶驴脡脪脭脨麓脥锚脕脣
 				}	 
 	};
 }

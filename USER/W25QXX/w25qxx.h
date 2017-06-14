@@ -4,7 +4,8 @@
 
 //////////////////////////////////////////////////////////////////////////////////	 
 
-//W25Q系列芯片ID列表	   
+//W25Q系列芯片ID列表	
+#define W25X40B  0XEF12   
 #define W25Q08 	0XEF13 	
 #define W25Q16 	0XEF14
 #define W25Q32 	0XEF15
@@ -31,7 +32,7 @@
 
 extern u16 W25QXX_ID;			   //记录W25QXX芯片型号		   
 
-#define	W25QXX_CS PGout(8)   //W25QXX的片选信号
+#define	W25QXX_CS PCout(4)   //W25QXX的片选信号
 
 void W25QXX_Init(void);
 u16  W25QXX_ReadID(void);  	    		//读取FLASH ID
