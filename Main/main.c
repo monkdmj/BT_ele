@@ -11,7 +11,8 @@
 #include "rs485.h"
 #include "inf.h"
 #include "usart1.h"
-#include "24c02.h" 
+// #include "24c02.h" 
+#include "eeprom.h"
 #include "w25qxx.h"
 #include "timer.h"
 #include "rs485.h"	
@@ -33,6 +34,7 @@
 
 // u8 const *weekdate[7]={"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"};
 float voice = 0.0f;
+//u8 uart1_data_count;
 //float dis[4] = {0.0f, 0.0f, 0.0f, 0.0f};
 
 
@@ -83,7 +85,14 @@ int main(void)
 
 	RS485_Init(9600);		//åˆå§‹åŒ–RS485ä¸²å£2
 
-	AT24C02_Init();			//AT24C02åˆå§‹åŒ–
+	//AT24C02_Init();			//AT24C02åˆå§‹åŒ–
+	AT24CXX_Init();
+	// AT24CXX_WriteOneByte(0, 0x55);
+	// uart1_data_count = AT24CXX_ReadOneByte(0);
+	// uart1SendChar(uart1_data_count);
+	//if(AT24C02_Test() == 0)
+	// if(EEPROM_Test() == 1)
+	// 	LED2 = 0;
 	W25QXX_Init();			//W25QXXåˆå§‹åŒ–
 	HC_SR04_tInit();
 	RS485_Init(9600);		//Â³ÃµÃŠÂ¼Â»Â¯RS485Â´Â®Â¿Ãš2
@@ -106,6 +115,7 @@ int main(void)
    	//LCD_DisplayString(20,110,16,"                       ");
 		//delay_ms(500);
 	}
+	// LED2 = 1;
 	
 	//LCD_DisplayString(20,110,16,"Bluetooth connected succeed");	  //æ¨¡å—å·²è¿žæŽ¥ä¸Šæ‰‹æœº
 	
@@ -120,7 +130,22 @@ int main(void)
 		// if(APP_mode==0)
 		//  {
 				if(t>500)   //2500msæ›´æ–°æ—¶é—´ä¸Žé‡‡é›†ä¸€æ¬¡æ¸©åº¦å€¼
-				{ 									
+				{ 		
+					// if(uart1_data_count==1)		
+					// {
+					// 	AT24CXX_WriteOneByte(0, 0x56);
+					// 	uart1_data_count = AT24CXX_ReadOneByte(0);
+					// 	uart1SendChar(uart1_data_count);
+					// 	if(uart1_data_count >= 255) 
+					// 	{
+					// 		uart1_data_count = 0;  //可以存255,下一次再判断
+					// 		// full_flag = 1;		   //表示之前存过255条
+					// 	}
+					// 	uart1_data_count ++;
+					// 	// AT24C02_WriteByte(0, uart1_data_count);
+					// 	AT24CXX_WriteOneByte(0, uart1_data_count);
+					// 	uart1SendChar(uart1_data_count);
+					// }					
           //RTC_GetTimes(RTC_Format_BIN);
           //Time_Display();	
 					

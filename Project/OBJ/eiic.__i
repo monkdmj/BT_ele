@@ -2,4 +2,4 @@
 -I "E:\Program Files\Keil\ARM\RV31\INC" 
 -I "E:\Program Files\Keil\ARM\CMSIS\Include" 
 -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx 
--o ".\OBJ\24c02.o" --omf_browse ".\OBJ\24c02.crf" --depend ".\OBJ\24c02.d" "..\USER\24C02\24c02.c"
+-o ".\OBJ\eiic.o" --omf_browse ".\OBJ\eiic.crf" --depend ".\OBJ\eiic.d" "..\USER\24C02\EIIC.c"

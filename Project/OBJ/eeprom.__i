@@ -2,4 +2,4 @@
 -I "E:\Program Files\Keil\ARM\RV31\INC" 
 -I "E:\Program Files\Keil\ARM\CMSIS\Include" 
 -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx 
--o ".\OBJ\stm32f4xx_gpio.o" --omf_browse ".\OBJ\stm32f4xx_gpio.crf" --depend ".\OBJ\stm32f4xx_gpio.d" "..\STM32F4_FWLIB\src\stm32f4xx_gpio.c"
+-o ".\OBJ\eeprom.o" --omf_browse ".\OBJ\eeprom.crf" --depend ".\OBJ\eeprom.d" "..\USER\24C02\eeprom.c"

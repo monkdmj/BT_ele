@@ -1,5 +1,0 @@
--c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I..\Common -I..\Main -I..\Startup_config -I..\STM32F4_FWLIB\inc -I..\USER\BEEP -I..\USER\KEY -I..\USER\LED -I..\USER\usart3_ble -I..\USER\LCD -I..\USER\DS18B20 -I..\USER\RTC -I..\USER\MPU6050 -I..\USER\GSM -I..\USER\ADC -I..\USER\RS485 -I..\USER\INF -I..\USER\RS232 -I..\USER\Sensor -I..\USER\24C02 -I..\USER\W25QXX -I..\USER\SPI -I..\USER\HCSR04 -I..\USER\RS485 --C99 
--I "E:\Program Files\Keil\ARM\RV31\INC" 
--I "E:\Program Files\Keil\ARM\CMSIS\Include" 
--DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx 
--o ".\OBJ\misc.o" --omf_browse ".\OBJ\misc.crf" --depend ".\OBJ\misc.d" "..\STM32F4_FWLIB\src\misc.c"

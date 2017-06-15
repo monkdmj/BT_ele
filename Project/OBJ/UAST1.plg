@@ -4,6 +4,63 @@
 <h1>礦ision Build Log</h1>
 <h2>Project:</h2>
 F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码-移植版\Project\BLE.uvproj
-Project File Date:  05/24/2017
+Project File Date:  06/14/2017
 
 <h2>Output:</h2>
+Build target 'Target 1'
+compiling usart3_ble.c...
+..\USER\usart3_ble\usart3_ble.c(190): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(212): warning:  #223-D: function "AT24C02_WriteByte" declared implicitly
+..\USER\usart3_ble\usart3_ble.c(251): warning:  #223-D: function "AT24C02_ReadByte" declared implicitly
+..\USER\usart3_ble\usart3_ble.c(286): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(289): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(292): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(304): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(307): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(310): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(322): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(325): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(328): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(339): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+..\USER\usart3_ble\usart3_ble.c(349): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+..\USER\usart3_ble\usart3_ble.c(350): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *restrict"
+compiling rs485.c...
+linking...
+Program Size: Code=59438 RO-data=7290 RW-data=180 ZI-data=1228988  
+FromELF: creating hex file...
+".\OBJ\UAST1.axf" - 0 Error(s), 15 Warning(s).
+Load "F:\\Workspace\\keil_workspace\\STM32F407\\手机APP经蓝牙控制开发板例程代码-移植版\\Project\\OBJ\\UAST1.AXF" 
+Set JLink Project File to "F:\Workspace\keil_workspace\STM32F407\手机APP经蓝牙控制开发板例程代码-移植版\Project\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZE" selected (512 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.54a, compiled Sep 17 2012 15:58:45
+Firmware: J-Link ARM-OB STM32 compiled Aug 22 2012 19:52:04
+Hardware: V7.00
+S/N : 20160410 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: Found SWD-DP with ID 0x2BA01477
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZE
+VTarget = 3.300V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 4000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

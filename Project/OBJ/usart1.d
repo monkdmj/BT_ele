@@ -51,6 +51,7 @@
 .\OBJ\usart1.o: ..\USER\RS485\rs485.h
 .\OBJ\usart1.o: ..\USER\INF\inf.h
 .\OBJ\usart1.o: ..\USER\Sensor\malloc.h
-.\OBJ\usart1.o: ..\USER\24C02\24c02.h
+.\OBJ\usart1.o: ..\USER\24C02\eeprom.h
+.\OBJ\usart1.o: ..\USER\24C02\EIIC.h
 .\OBJ\usart1.o: ..\USER\W25QXX\w25qxx.h
 .\OBJ\usart1.o: ..\USER\HCSR04\timer.h

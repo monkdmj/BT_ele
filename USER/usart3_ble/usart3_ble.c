@@ -10,7 +10,8 @@
 #include "adc.h"
 #include "usart1.h"
 #include "w25qxx.h"
-#include "24c02.h" 
+// #include "24c02.h" 
+#include "eeprom.h"
 #include "timer.h"
 #include "rs485.h"	
 
@@ -161,7 +162,7 @@ void USART3_IRQHandler(void)
 				if(RS485_status_success == 1)
 				{
 					uart3SendChars(RS485_receive_status,status_len);
-					//uart1SendChars(RS485_receive_status,status_len);
+					// uart1SendChars(RS485_receive_status,status_len);
 				}
 				else
 				{
@@ -174,7 +175,7 @@ void USART3_IRQHandler(void)
 				if(RS485_alarm_success == 1)
 				{
 					uart3SendChars(RS485_receive_alarm,alarm_len);
-					//uart1SendChars(RS485_receive_alarm,alarm_len);
+					// uart1SendChars(RS485_receive_alarm,alarm_len);
 				}
 				else
 				{
@@ -263,7 +264,7 @@ void USART3_IRQHandler(void)
 					W25QXX_Read((u8*)pac_tmp_len,tmp*4096,2);
 					pac_len = (pac_tmp_len[0] << 8) + pac_tmp_len[1];
 					W25QXX_Read((u8*)datatemp,tmp*4096+2,pac_len);
-					//uart1SendChars(datatemp,pac_len);
+					// uart1SendChars(datatemp,pac_len);
 					uart3SendChars(datatemp,pac_len);
 				}
 

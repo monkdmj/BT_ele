@@ -1,0 +1,39 @@
+.\OBJ\eeprom.o: ..\USER\24C02\eeprom.c
+.\OBJ\eeprom.o: ..\USER\24C02\eeprom.h
+.\OBJ\eeprom.o: ..\USER\24C02\EIIC.h
+.\OBJ\eeprom.o: ..\Common\common.h
+.\OBJ\eeprom.o: ..\Startup_config\stm32f4xx.h
+.\OBJ\eeprom.o: ..\Startup_config\core_cm4.h
+.\OBJ\eeprom.o: E:\Program Files\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\OBJ\eeprom.o: E:\Program Files\Keil\ARM\CMSIS\Include\core_cmInstr.h
+.\OBJ\eeprom.o: E:\Program Files\Keil\ARM\CMSIS\Include\core_cmFunc.h
+.\OBJ\eeprom.o: ..\Startup_config\core_cm4_simd.h
+.\OBJ\eeprom.o: ..\Startup_config\system_stm32f4xx.h
+.\OBJ\eeprom.o: ..\Startup_config\stm32f4xx_conf.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_adc.h
+.\OBJ\eeprom.o: ..\Startup_config\stm32f4xx.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_crc.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dbgmcu.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dma.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_exti.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_flash.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_gpio.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_i2c.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_iwdg.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_pwr.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_rcc.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_rtc.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_sdio.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_spi.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_syscfg.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_tim.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_usart.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_wwdg.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\misc.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_cryp.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_hash.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_rng.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_can.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dac.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_dcmi.h
+.\OBJ\eeprom.o: ..\STM32F4_FWLIB\inc\stm32f4xx_fsmc.h

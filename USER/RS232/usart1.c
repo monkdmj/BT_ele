@@ -12,7 +12,8 @@
 #include "rs485.h"
 #include "inf.h"
 #include "malloc.h"
-#include "24c02.h"  
+// #include "24c02.h"  
+#include "eeprom.h"
 #include "w25qxx.h"
 #include "timer.h"
 //#include <stdio.h>
@@ -115,7 +116,7 @@ void USART1_IRQHandler(void)
 	int i = 0;
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)  //½ÓÊÕÖÐ¶Ï 
 		{
-			LED1 = !LED1;
+			// LED1 = !LED1;
 				rec_data =(u8)USART_ReceiveData(USART1);         //(USART1->DR) ¶ÁÈ¡½ÓÊÕµ½µÄÊý¾Ý
         		if(rec_data=='{')		  	                         //Èç¹ûÊÇS£¬±íÊ¾ÊÇÃüÁîÐÅÏ¢µÄÆðÊ¼Î»
 				{
@@ -138,7 +139,7 @@ void USART1_IRQHandler(void)
 					// }
 					
 					//给slave返回OK
-					LED2 = !LED2;
+					// LED2 = !LED2;
 					char tmp[30] = "";
 					tmp[0]=0x4f;
 					tmp[1]=0x4b;
@@ -148,15 +149,20 @@ void USART1_IRQHandler(void)
 				    uart1SendChars(tmp,len);
 					
 					//24c02存储记录条数 AT24C02_WriteByte  AT24C02_ReadByte
-					uart1_data_count = AT24C02_ReadByte(0);
+					// uart1_data_count = AT24C02_ReadByte(0);
+					// uart1_data_count = 1;
+					// AT24CXX_WriteOneByte(0, 0x56);
+					uart1_data_count = AT24CXX_ReadOneByte(0);
+					// uart1SendChar(uart1_data_count);
 					if(uart1_data_count >= 255) 
 					{
 						uart1_data_count = 0;  //可以存255,下一次再判断
 						full_flag = 1;		   //表示之前存过255条
 					}
 					uart1_data_count ++;
-					AT24C02_WriteByte(0, uart1_data_count);
-					//uart1SendChar(uart1_data_count);
+					// AT24C02_WriteByte(0, uart1_data_count);
+					AT24CXX_WriteOneByte(0, uart1_data_count);
+					// uart1SendChar(uart1_data_count);
 					
 
 					//package

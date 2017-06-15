@@ -56,17 +56,17 @@ void HC_SR04_tInit(void)
  	
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);  
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;		//PB12--ECHO
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;		//PB12--ECHO
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 		//¸¡¿ÕÊäÈë
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;			//PB13--TRIG	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;			//PB13--TRIG	
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;					//Ä£ÄâÊä³ö
 	//GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;       //推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 
 	GPIO_Init(GPIOB, &GPIO_InitStructure);	
-	GPIO_SetBits(GPIOB, GPIO_Pin_12 |GPIO_Pin_13);
+	GPIO_SetBits(GPIOB, GPIO_Pin_8 |GPIO_Pin_9);
 	
 	
 	
